@@ -29,6 +29,17 @@ public final class OutilsDepartement {
     }
 
     public static Departement rechercheParNom(String nom) {
-        return REPERTOIRE_DEPARTEMENT.get(OutilsGeneraux.formater(nom));
+        nom = OutilsGeneraux.formater(nom);
+        Departement resultat = REPERTOIRE_DEPARTEMENT.get(nom);
+        if (resultat == null)
+            resultat = trouverMeilleureOccurence(nom);
+        return resultat;
+    }
+
+    private static Departement trouverMeilleureOccurence(String nom) {
+        String meilleureOccurence = OutilsString.trouverLaMeilleurOccurence(REPERTOIRE_DEPARTEMENT.keySet(), nom);
+        if (meilleureOccurence == null)
+            return null;
+        return REPERTOIRE_DEPARTEMENT.get(meilleureOccurence);
     }
 }
