@@ -54,7 +54,11 @@ public enum Region {
         return OutilsRegion.rechercherParNom(nom);
     }
 
-	public static Object rechercherParDepartement(Departement vaucluse) {
-		return null;
-	}
+    public static Region rechercherParDepartement(Departement departement) {
+        for (Region region : Region.values())
+            for (Departement depDansRegion : region.getDepartements())
+                if (departement == depDansRegion)
+                    return region;
+        return null;
+    }
 }
