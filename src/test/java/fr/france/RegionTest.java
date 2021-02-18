@@ -44,5 +44,9 @@ class RegionTest {
                 Arguments.of(Region.GUADELOUPE, "Guadeloupe"));
     }
 
+    @Test
+    void test_rechercheParDepartement() {
+        assertEquals(Region.PROVENCE_ALPES_COTE_D_AZUR, Region.rechercherParDepartement(Departement.VAUCLUSE));
+    }
 
 }

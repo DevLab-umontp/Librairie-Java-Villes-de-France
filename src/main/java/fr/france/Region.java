@@ -53,4 +53,8 @@ public enum Region {
     public static Region rechercherParNom(String nom) {
         return OutilsRegion.rechercherParNom(nom);
     }
+
+	public static Object rechercherParDepartement(Departement vaucluse) {
+		return null;
+	}
 }
