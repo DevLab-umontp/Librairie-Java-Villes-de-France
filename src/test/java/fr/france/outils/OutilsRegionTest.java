@@ -20,7 +20,7 @@ class OutilsRegionTest {
     private static Stream<Arguments> genererArgumentsPourtest_rechercheParNom() {
         return Stream.of(//
                 Arguments.of(Region.AUVERGNE_RHONE_ALPES, "Auvergne rhone aples"), //
-                Arguments.of(null, "cote"), //
+                Arguments.of(null, "Gu"), //
                 Arguments.of(null, ""), //
                 Arguments.of(Region.AUVERGNE_RHONE_ALPES, "Auvergne rhones aples"), //
                 Arguments.of(Region.GUYANE, "guyane"), //
