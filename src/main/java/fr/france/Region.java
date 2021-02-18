@@ -1,6 +1,7 @@
 package fr.france;
 
 import fr.france.outils.OutilsDepartement;
+import fr.france.outils.OutilsRegion;
 
 public enum Region {
     AUVERGNE_RHONE_ALPES("Auvergne-Rhône-Alpes"), //
@@ -49,7 +50,7 @@ public enum Region {
         return nom;
     }
 
-	public static Object rechercheParNom(String input) {
-		return null;
+	public static Region rechercheParNom(String nom) {
+		return OutilsRegion.rechercheParNom(nom);
 	}
 }
