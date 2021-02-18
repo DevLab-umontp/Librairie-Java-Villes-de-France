@@ -97,7 +97,20 @@ public enum Departement {
     HAUTS_DE_SEINE(92, TypeDepartement.DPT, "Hauts-de-Seine", "Nanterre", Region.ILE_DE_FRANCE), //
     SEINE_SAINT_DENIS(93, TypeDepartement.DPT, "Seine-Saint-Denis", "Bobigny", Region.ILE_DE_FRANCE), //
     VAL_DE_MARNE(94, TypeDepartement.DPT, "Val-de-Marne", "Créteil", Region.ILE_DE_FRANCE), //
-    VAL_D_OISE(95, TypeDepartement.DPT, "Val-D'Oise", "Pontoise", Region.ILE_DE_FRANCE);
+    VAL_D_OISE(95, TypeDepartement.DPT, "Val-D'Oise", "Pontoise", Region.ILE_DE_FRANCE),//
+    GUADELOUPE(971, TypeDepartement.DOM, "Guadeloupe", "Basse-Terre", Region.GUADELOUPE),//
+    MARTINIQUE(972, TypeDepartement.DOM, "Martinique", "Fort-de-France", Region.MARTINIQUE),//
+    GUYANE(973, TypeDepartement.DOM, "Guyane", "Cayenne", Region.GUYANE),//
+    LA_REUNION(974, TypeDepartement.DOM, "La Réunion", "Saint-Denis", Region.LA_REUNION),//
+    SAINT_PIERRE_ET_MIQUELON(975, TypeDepartement.COM, "Saint-Pierre-et-Miquelon", "Saint-Pierre", Region.DEPARTEMENT_NON_RATTACHE_A_UNE_REGION),//
+    MAYOTTE(976, TypeDepartement.DOM, "Mayotte", "Mamoudzou", Region.MAYOTTE),//
+    SAINT_BARTHELEMY(977, TypeDepartement.COM, "Saint-Barthélémy", "Gustavia", Region.DEPARTEMENT_NON_RATTACHE_A_UNE_REGION),//
+    SAINT_MARTIN(978, TypeDepartement.COM, "Saint-Martin", "Marigot", Region.DEPARTEMENT_NON_RATTACHE_A_UNE_REGION),//
+    TERRES_AUSTRALES_ET_ANTARCTIQUES_FRANCAISE(984, TypeDepartement.TOM, "Terres australes et antarctiques françaises", "Aucune prefecture", Region.DEPARTEMENT_NON_RATTACHE_A_UNE_REGION),//
+    CALLIS_ET_FUTUNA(986, TypeDepartement.PTOM, "Wallis-et-Futuna", "Mata Utu", Region.DEPARTEMENT_NON_RATTACHE_A_UNE_REGION),//
+    POLYNESIE_FRANCAISE(987, TypeDepartement.COM, "Polynésie française", "Papeete", Region.DEPARTEMENT_NON_RATTACHE_A_UNE_REGION),//
+    NOUVELLE_CALEDONIE(988, TypeDepartement.PTOM, "Nouvelle-Calédonie", "Nouméa", Region.DEPARTEMENT_NON_RATTACHE_A_UNE_REGION),//
+    ILE_DE_CLIPPERTON(989, TypeDepartement.COM, "Île de Clipperton", "Clipperton", Region.DEPARTEMENT_NON_RATTACHE_A_UNE_REGION);
 
     private int code;
     private TypeDepartement type;

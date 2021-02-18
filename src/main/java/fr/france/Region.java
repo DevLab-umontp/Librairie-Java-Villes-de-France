@@ -20,7 +20,8 @@ public enum Region {
     NOUVELLE_AQUITAINE("Nouvelle-Aquitaine"), //
     OCCITANIE("Occitanie"), //
     PAYS_DE_LA_LOIRE("Pays de la Loire"), //
-    PROVENCE_ALPES_COTE_D_AZUR("Provence-Alpes-Côte d'Azur");
+    PROVENCE_ALPES_COTE_D_AZUR("Provence-Alpes-Côte d'Azur"),//
+    DEPARTEMENT_NON_RATTACHE_A_UNE_REGION("Département non rattaché à une région.");
 
     private Departement[] departements;
     private String nom;
