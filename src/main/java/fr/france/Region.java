@@ -39,7 +39,7 @@ public enum Region {
      */
     public Departement[] getDepartements() {
         if (departements == null)
-            departements = OutilsDepartement.filterDepartementsPar(this);
+            departements = OutilsDepartement.filtrerDepartementsParRegion(this);
         return departements;
     }
 

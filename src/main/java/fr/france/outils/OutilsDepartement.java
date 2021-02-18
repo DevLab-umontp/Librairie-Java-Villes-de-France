@@ -22,7 +22,7 @@ public final class OutilsDepartement {
         REPERTOIRE_DEPARTEMENT = Collections.unmodifiableMap(temp);
     }
 
-    public static Departement[] filterDepartementsPar(Region region) {
+    public static Departement[] filtrerDepartementsParRegion(Region region) {
         Collection<Departement> result = new ArrayList<>();
         for (Departement dep : Departement.values())
             if (dep.getRegion().equals(region))
