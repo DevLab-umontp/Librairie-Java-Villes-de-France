@@ -48,4 +48,8 @@ public enum Region {
     public String getNom() {
         return nom;
     }
+
+	public static Object rechercheParNom(String input) {
+		return null;
+	}
 }
