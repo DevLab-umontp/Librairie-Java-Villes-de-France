@@ -32,6 +32,7 @@ class OutilsStringTest {
     private static Stream<Arguments> genererArgumentsPourtest_trouverMeilleureOccurence() {
         return Stream.of(//
                 Arguments.of("Blois", "Bloi"), //
+                Arguments.of(null, ""), //
                 Arguments.of(null, "Loir"));
     }
 
