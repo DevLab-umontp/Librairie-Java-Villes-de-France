@@ -133,6 +133,10 @@ public enum Departement {
         this.region = region;
     }
 
+    public static Departement rechercheParNom(String nom){
+        return null;
+    }
+
     /**
      * @return the code
      */
