@@ -11,7 +11,17 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
 class OutilsStringTest {
+    @ParameterizedTest(name = "Doit retourner une difference de {0} pour les chaines de caractères {1} et {2}")
+    @MethodSource("genererArgumentsPourtest_indexOfDifference")
+    void test_indexOfDifference(int excepted, String str1, String str2) {
+        assertEquals(excepted, OutilsString.indexOfDifference(str1, str2));
+    }
 
+    private static Stream<Arguments> genererArgumentsPourtest_indexOfDifference() {
+        return Stream.of(//
+                Arguments.of(0, "salut", "salut"), //
+                Arguments.of(2, "saLut", "salut"));
+    }
 
     @ParameterizedTest(name = "Doit retourner {0} lrsque que l'on cherche la meilleure occurence pour {1} dans la collection")
     @MethodSource("genererArgumentsPourtest_trouverMeilleureOccurence")
