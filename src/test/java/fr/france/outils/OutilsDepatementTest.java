@@ -21,6 +21,7 @@ class OutilsDepatementTest {
     private static Stream<Arguments> genererArgumentsPourtest_rechercheParNom() {
         return Stream.of(//
                 Arguments.of(Departement.COTE_D_OR, "cote dOr"), //
+                Arguments.of(Departement.COTE_D_OR, "cote dOrs"), //
                 Arguments.of(Departement.GUYANE, "guyane"), //
                 Arguments.of(Departement.GUYANE, "Guyane"));
     }
