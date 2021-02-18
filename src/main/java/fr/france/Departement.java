@@ -65,7 +65,7 @@ public enum Departement {
     OISE(60, TypeDepartement.DPT, "Oise", "Beauvais", Region.HAUTS_DE_FRANCE), //
     ORNE(61, TypeDepartement.DPT, "Orne", "Alençon", Region.NORMANDIE), //
     PAS_DE_CALAIS(62, TypeDepartement.DPT, "Pas-de-Calais", "Arras", Region.HAUTS_DE_FRANCE), //
-    PUT_DE_DOME(63, TypeDepartement.DPT, "Puy-de-Dôme", "Clermont-Ferrand", Region.AUVERGNE_RHONE_ALPES), //
+    PUY_DE_DOME(63, TypeDepartement.DPT, "Puy-de-Dôme", "Clermont-Ferrand", Region.AUVERGNE_RHONE_ALPES), //
     PYRENEES_ATLANTIQUES(64, TypeDepartement.DPT, "Pyrénées-Atlantiques", "Pau", Region.NOUVELLE_AQUITAINE), //
     HAUTES_PYRENEES(65, TypeDepartement.DPT, "Hautes-Pyrénées", "Tarbes", Region.OCCITANIE), //
     PYRENEES_ORIENTALES(66, TypeDepartement.DPT, "Pyrénées-Orientales", "Perpignan", Region.OCCITANIE), //
@@ -88,12 +88,12 @@ public enum Departement {
     VAR(83, TypeDepartement.DPT, "Var", "Toulon", Region.PROVENCE_ALPES_COTE_D_AZUR), //
     VAUCLUSE(84, TypeDepartement.DPT, "Vaucluse", "Avignon", Region.PROVENCE_ALPES_COTE_D_AZUR), //
     VENDEE(85, TypeDepartement.DPT, "Vendée", "La Roche-sur-Yon", Region.PAYS_DE_LA_LOIRE), //
-    VIENNES(86, TypeDepartement.DPT, "Vienne", "Poitiers", Region.NOUVELLE_AQUITAINE), //
+    VIENNE(86, TypeDepartement.DPT, "Vienne", "Poitiers", Region.NOUVELLE_AQUITAINE), //
     HAUTE_VIENNE(87, TypeDepartement.DPT, "Haute-Vienne", "Limoges", Region.NOUVELLE_AQUITAINE), //
     VOSGES(88, TypeDepartement.DPT, "Vosges", "Épinal", Region.GRAND_EST), //
     YONNE(89, TypeDepartement.DPT, "Yonne", "Auxerre", Region.BOURGOGNE_FRANCHE_COMTE), //
     TERRITOIRE_DE_BELFORT(90, TypeDepartement.DPT, "Territoire-de-Belfort", "Belfort", Region.BOURGOGNE_FRANCHE_COMTE), //
-    ESSONE(91, TypeDepartement.DPT, "Essonne", "Évry", Region.ILE_DE_FRANCE), //
+    ESSONNE(91, TypeDepartement.DPT, "Essonne", "Évry", Region.ILE_DE_FRANCE), //
     HAUTS_DE_SEINE(92, TypeDepartement.DPT, "Hauts-de-Seine", "Nanterre", Region.ILE_DE_FRANCE), //
     SEINE_SAINT_DENIS(93, TypeDepartement.DPT, "Seine-Saint-Denis", "Bobigny", Region.ILE_DE_FRANCE), //
     VAL_DE_MARNE(94, TypeDepartement.DPT, "Val-de-Marne", "Créteil", Region.ILE_DE_FRANCE), //
