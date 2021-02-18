@@ -17,7 +17,7 @@ public final class OutilsDepartement {
     static {
         REPERTOIRE_DEPARTEMENT = new HashMap<>();
         for (Departement departement : Departement.values())
-            REPERTOIRE_DEPARTEMENT.put(OutilsGeneraux.formater(departement.getNom()), departement);
+            REPERTOIRE_DEPARTEMENT.put(OutilsString.formater(departement.getNom()), departement);
     }
 
     public static Departement[] filterDepartementsPar(Region region) {
@@ -29,7 +29,7 @@ public final class OutilsDepartement {
     }
 
     public static Departement rechercheParNom(String nom) {
-        nom = OutilsGeneraux.formater(nom);
+        nom = OutilsString.formater(nom);
         Departement resultat = REPERTOIRE_DEPARTEMENT.get(nom);
         if (resultat == null)
             resultat = trouverMeilleureOccurence(nom);

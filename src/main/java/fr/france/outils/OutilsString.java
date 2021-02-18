@@ -1,8 +1,11 @@
 package fr.france.outils;
 
+import java.text.Normalizer;
 import java.util.Collection;
 import java.util.Comparator;
+import java.util.Locale;
 import java.util.PriorityQueue;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class OutilsString {
@@ -36,4 +39,35 @@ public class OutilsString {
             return occurence1.getValeur();
         return null;
     }
+
+	/**
+	 * @param str {@code String} auquel l'on doit enlever l'accentuation
+	 * 
+	 * @return {@code String} sans accentuation.
+	 * 
+	 * @see Normalizer
+	 * 
+	 * @since 1.0.0
+	 */
+	public static String supprimerAccentuation(String str) {
+	    String nfdNormalizedString = Normalizer.normalize(str, Normalizer.Form.NFD);
+	    Pattern pattern = Pattern.compile("\\p{InCombiningDiacriticalMarks}+");
+	    return pattern.matcher(nfdNormalizedString).replaceAll("");
+	}
+
+	/**
+	 * @param nom
+	 * 
+	 * @return la variable {@code nom} formaté de façon à supprimer les accents et
+	 *         les caractères spéciaux, ainsi uniformiser les entrées.
+	 * 
+	 * @see String#toLowerCase(Locale)
+	 * @see supprimerAccent
+	 * 
+	 * @since 1.0.0
+	 */
+	public static String formater(String nom) {
+	    nom = supprimerAccentuation(nom);
+	    return nom.toLowerCase(Locale.FRANCE).replaceAll("[^a-z]", "");
+	}
 }
