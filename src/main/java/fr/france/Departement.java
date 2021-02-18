@@ -120,4 +120,38 @@ public enum Departement {
         this.region = region;
     }
 
+    /**
+     * @return the code
+     */
+    public int getCode() {
+        return code;
+    }
+
+    /**
+     * @return the type
+     */
+    public TypeDepartement getType() {
+        return type;
+    }
+
+    /**
+     * @return the nom
+     */
+    public String getNom() {
+        return nom;
+    }
+
+    /**
+     * @return the villeDePrefecture
+     */
+    public String getVilleDePrefecture() {
+        return villeDePrefecture;
+    }
+
+    /**
+     * @return the region
+     */
+    public Region getRegion() {
+        return region;
+    }
 }
