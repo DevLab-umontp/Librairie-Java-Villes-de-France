@@ -2,6 +2,7 @@ package fr.france.outils;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -15,9 +16,10 @@ public final class OutilsDepartement {
 
     private static final Map<String, Departement> REPERTOIRE_DEPARTEMENT;
     static {
-        REPERTOIRE_DEPARTEMENT = new HashMap<>();
+        Map<String, Departement> temp = new HashMap<>();
         for (Departement departement : Departement.values())
-            REPERTOIRE_DEPARTEMENT.put(OutilsString.formater(departement.getNom()), departement);
+            temp.put(OutilsString.formater(departement.getNom()), departement);
+        REPERTOIRE_DEPARTEMENT = Collections.unmodifiableMap(temp);
     }
 
     public static Departement[] filterDepartementsPar(Region region) {
