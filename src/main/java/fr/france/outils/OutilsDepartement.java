@@ -30,7 +30,7 @@ public final class OutilsDepartement {
         return result.toArray(new Departement[0]);
     }
 
-    public static Departement rechercheParNom(String nom) {
+    public static Departement rechercherParNom(String nom) {
         nom = OutilsString.formater(nom);
         Departement resultat = REPERTOIRE_DEPARTEMENT.get(nom);
         if (resultat == null)

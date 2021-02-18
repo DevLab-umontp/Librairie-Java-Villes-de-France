@@ -135,8 +135,8 @@ public enum Departement {
         this.region = region;
     }
 
-    public static Departement rechercheParNom(String nom){
-        return OutilsDepartement.rechercheParNom(nom);
+    public static Departement rechercherParNom(String nom){
+        return OutilsDepartement.rechercherParNom(nom);
     }
 
     /**

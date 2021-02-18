@@ -13,7 +13,7 @@ class DepartementTest {
     @ParameterizedTest(name = "Doit retourner le département {0} lorsque l'on fait une recherche avec le nom {1}")
     @MethodSource("genererArgumentsPourtest_rechercheParNom")
     void test_rechercheParNom(Departement excepted, String input) {
-        assertEquals(excepted, Departement.rechercheParNom(input));
+        assertEquals(excepted, Departement.rechercherParNom(input));
     }
 
     private static Stream<Arguments> genererArgumentsPourtest_rechercheParNom() {

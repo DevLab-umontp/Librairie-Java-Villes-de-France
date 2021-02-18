@@ -33,7 +33,7 @@ class RegionTest {
     @ParameterizedTest(name = "Doit retourner la région {0} lorsque l'on fait une recherche avec le nom {1}")
     @MethodSource("genererArgumentsPourtest_rechercheParNom")
     void test_rechercheParNom(Region excepted, String input) {
-        assertEquals(excepted, Region.rechercheParNom(input));
+        assertEquals(excepted, Region.rechercherParNom(input));
     }
 
     private static Stream<Arguments> genererArgumentsPourtest_rechercheParNom() {
@@ -43,4 +43,6 @@ class RegionTest {
                 Arguments.of(Region.PROVENCE_ALPES_COTE_D_AZUR, "provencealpescotedazure"), //
                 Arguments.of(Region.GUADELOUPE, "Guadeloupe"));
     }
+
+
 }

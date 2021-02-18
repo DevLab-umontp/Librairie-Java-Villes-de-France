@@ -14,7 +14,7 @@ class OutilsRegionTest {
     @ParameterizedTest(name = "Doit retourner la région {0} lorsque l'on fait une recherche avec le nom {1}")
     @MethodSource("genererArgumentsPourtest_rechercheParNom")
     void test_rechercheParNom(Region excepted, String input) {
-        assertEquals(excepted, OutilsRegion.rechercheParNom(input));
+        assertEquals(excepted, OutilsRegion.rechercherParNom(input));
     }
 
     private static Stream<Arguments> genererArgumentsPourtest_rechercheParNom() {

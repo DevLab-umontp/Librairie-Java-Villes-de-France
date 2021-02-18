@@ -19,7 +19,7 @@ public final class OutilsRegion {
         REPERTOIRE_REGION = Collections.unmodifiableMap(temp);
     }
 
-    public static Region rechercheParNom(String nom) {
+    public static Region rechercherParNom(String nom) {
         nom = OutilsString.formater(nom);
         Region resultat = REPERTOIRE_REGION.get(nom);
         if (resultat == null)

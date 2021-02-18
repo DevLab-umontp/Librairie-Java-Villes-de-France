@@ -50,7 +50,7 @@ public enum Region {
         return nom;
     }
 
-	public static Region rechercheParNom(String nom) {
-		return OutilsRegion.rechercheParNom(nom);
-	}
+    public static Region rechercherParNom(String nom) {
+        return OutilsRegion.rechercherParNom(nom);
+    }
 }
