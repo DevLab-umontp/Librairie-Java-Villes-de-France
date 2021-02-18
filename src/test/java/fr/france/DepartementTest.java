@@ -18,6 +18,7 @@ class DepartementTest {
 
     private static Stream<Arguments> genererArgumentsPourtest_rechercheParNom() {
         return Stream.of(//
+                Arguments.of(Departement.GUYANE, "guyyane"), //
                 Arguments.of(Departement.GUYANE, "guyane"), //
                 Arguments.of(Departement.GUYANE, "Guyane"));
     }
