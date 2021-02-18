@@ -1,5 +1,7 @@
 package fr.france;
 
+import fr.france.outils.OutilsDepartement;
+
 public enum Departement {
     AIN(1, TypeDepartement.DPT, "Ain", "Bourg-en-Bresse", Region.AUVERGNE_RHONE_ALPES), //
     AISNE(2, TypeDepartement.DPT, "Aisne", "Laon", Region.HAUTS_DE_FRANCE), //
@@ -134,7 +136,7 @@ public enum Departement {
     }
 
     public static Departement rechercheParNom(String nom){
-        return null;
+        return OutilsDepartement.rechercheParNom(nom);
     }
 
     /**
