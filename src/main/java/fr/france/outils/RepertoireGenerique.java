@@ -1,27 +1,32 @@
 package fr.france.outils;
 
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.Map;
 
-class RepertoireGenerique<V> {
+class RepertoireGenerique<T extends Enum<T>> {
 
-    private final Map<String, V> repertoire;
+    private final Map<String, T> repertoire;
 
     /**
      * @param repertoire
      */
-    public RepertoireGenerique(final Map<String, V> repertoire) {
-        this.repertoire = repertoire;
+    public RepertoireGenerique(Class<T> enumType) {
+        Map<String, T> temp = new HashMap<>();
+        for (T departement : enumType.getEnumConstants())
+            temp.put(OutilsString.formater(departement.name()), departement);
+        this.repertoire = Collections.unmodifiableMap(temp);
     }
 
-    public V rechercherParNom(String nom) {
+    public T rechercherParNom(String nom) {
         nom = OutilsString.formater(nom);
-        V resultat = repertoire.get(nom);
+        T resultat = repertoire.get(nom);
         if (resultat == null)
             resultat = trouverMeilleureOccurence(nom);
         return resultat;
     }
 
-    private V trouverMeilleureOccurence(String nom) {
+    private T trouverMeilleureOccurence(String nom) {
         String meilleureOccurence = OutilsString.trouverLaMeilleurOccurence(repertoire.keySet(), nom);
         if (meilleureOccurence == null)
             return null;
