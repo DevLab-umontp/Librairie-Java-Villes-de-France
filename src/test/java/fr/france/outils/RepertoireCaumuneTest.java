@@ -37,4 +37,9 @@ class RepertoireCaumuneTest {
         assertEquals(1, RepertoireCaumune.rechercherParNom("St saturnin les avignon").size());
     }
 
+    @Test
+    void test_RechercherParNomEtCodePostal() {
+        assertNotNull(RepertoireCaumune.rechercherParNomEtCodePostal("Montpellier", 34000));
+    }
+
 }

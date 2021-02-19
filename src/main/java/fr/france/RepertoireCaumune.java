@@ -33,6 +33,30 @@ public class RepertoireCaumune {
         return result;
     }
 
+    private static final Map<Integer, List<Caumune>> REPERTOIRE_CODE_POSTAL;
+    private static final Map<String, List<Caumune>> REPERTOIRE_NOM;
+    private static final Map<String, Caumune> REPERTOIRE_NOM_ET_CODE_POSTAL;
+
+    static {
+        Map<Integer, List<Caumune>> codePostaux = new HashMap<>();
+        Map<String, List<Caumune>> noms = new HashMap<>();
+        Map<String, Caumune> nomEtCodePostal = new HashMap<>();
+        for (Caumune caumune : CAUMUNES) {
+            if (caumune.getNom() == null)
+                continue;
+            nomEtCodePostal.put(OutilsString.formater(caumune.getNom()) + caumune.getCodePostal(), caumune);
+            List<Caumune> villesNom = noms.computeIfAbsent(OutilsString.formater(caumune.getNom()),
+                    k -> new ArrayList<>());
+            List<Caumune> villesCodePostal = codePostaux.computeIfAbsent(caumune.getCodePostal(),
+                    k -> new ArrayList<>());
+            villesNom.add(caumune);
+            villesCodePostal.add(caumune);
+        }
+        REPERTOIRE_CODE_POSTAL = Collections.unmodifiableMap(codePostaux);
+        REPERTOIRE_NOM = Collections.unmodifiableMap(noms);
+        REPERTOIRE_NOM_ET_CODE_POSTAL = Collections.unmodifiableMap(nomEtCodePostal);
+    }
+
     /**
      * @return Toutes les caumunes françaises
      * 
@@ -42,13 +66,16 @@ public class RepertoireCaumune {
         return new ArrayList<>(CAUMUNES);
     }
 
-	public static List<Object> rechercherParCodePostal(int i) {
-		return null;
-	}
+    public static List<Caumune> rechercherParCodePostal(int codePostal) {
+        return REPERTOIRE_CODE_POSTAL.get(codePostal);
+    }
 
-	public static List<Object> rechercherParNom(String string) {
-		return null;
-	}
+    public static List<Caumune> rechercherParNom(String nom) {
+        return REPERTOIRE_NOM.get(OutilsString.formater(nom));
+    }
 
+    public static Caumune rechercherParNomEtCodePostal(String nom, int codePostal) {
+        return REPERTOIRE_NOM_ET_CODE_POSTAL.get(OutilsString.formater(nom) + codePostal);
+    }
 
 }
