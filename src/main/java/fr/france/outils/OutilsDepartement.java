@@ -24,4 +24,9 @@ public final class OutilsDepartement {
     public static Departement rechercherParNom(String nom) {
         return REPERTOIRE_DEPARTEMENT.rechercherParNom(nom);
     }
+
+	public static Object rechercherParCode(int input) {
+		return null;
+	}
+
 }
