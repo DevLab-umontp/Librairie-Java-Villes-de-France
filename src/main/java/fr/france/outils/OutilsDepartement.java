@@ -14,12 +14,12 @@ public final class OutilsDepartement {
         throw new IllegalStateException("Class utilitaire");
     }
 
-    private static final Map<String, Departement> REPERTOIRE_DEPARTEMENT;
+    private static final RepertoireGenerique<Departement> REPERTOIRE_DEPARTEMENT;
     static {
         Map<String, Departement> temp = new HashMap<>();
         for (Departement departement : Departement.values())
             temp.put(OutilsString.formater(departement.getNom()), departement);
-        REPERTOIRE_DEPARTEMENT = Collections.unmodifiableMap(temp);
+        REPERTOIRE_DEPARTEMENT = new RepertoireGenerique<>(Collections.unmodifiableMap(temp));
     }
 
     public static Departement[] filtrerDepartementsParRegion(Region region) {
@@ -31,17 +31,6 @@ public final class OutilsDepartement {
     }
 
     public static Departement rechercherParNom(String nom) {
-        nom = OutilsString.formater(nom);
-        Departement resultat = REPERTOIRE_DEPARTEMENT.get(nom);
-        if (resultat == null)
-            resultat = trouverMeilleureOccurence(nom);
-        return resultat;
-    }
-
-    private static Departement trouverMeilleureOccurence(String nom) {
-        String meilleureOccurence = OutilsString.trouverLaMeilleurOccurence(REPERTOIRE_DEPARTEMENT.keySet(), nom);
-        if (meilleureOccurence == null)
-            return null;
-        return REPERTOIRE_DEPARTEMENT.get(meilleureOccurence);
+        return REPERTOIRE_DEPARTEMENT.rechercherParNom(nom);
     }
 }
