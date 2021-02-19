@@ -1,5 +1,6 @@
 package fr.france.outils;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
@@ -24,6 +25,16 @@ class RepertoireCaumuneTest {
         assertNotNull(caumunes.get(1).getNom());
         assertNotNull(caumunes.get(1).getCodeINSEE());
         assertNotEquals(0, caumunes.get(1).getCodePostal());
+    }
+
+    @Test
+    void test_RechercherParCodePostal() {
+        assertEquals(2, RepertoireCaumune.rechercherParCodePostal(84450).size());
+    }
+
+    @Test
+    void test_RechercherParNom() {
+        assertEquals(1, RepertoireCaumune.rechercherParNom("St saturnin les avignon").size());
     }
 
 }

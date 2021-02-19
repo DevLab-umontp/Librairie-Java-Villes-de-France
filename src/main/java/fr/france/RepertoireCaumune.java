@@ -2,9 +2,17 @@ package fr.france;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import com.opencsv.bean.CsvToBeanBuilder;
+
+import fr.france.outils.OutilsString;
 
 public class RepertoireCaumune {
 
@@ -12,7 +20,7 @@ public class RepertoireCaumune {
         throw new IllegalStateException("Class utilitaire");
     }
 
-    private static final List<Caumune> CAUMUNES = initCaumunes();
+    private static final Set<Caumune> CAUMUNES = new HashSet<>(initCaumunes());
 
     private static List<Caumune> initCaumunes() {
         List<Caumune> result = null;
@@ -26,9 +34,21 @@ public class RepertoireCaumune {
     }
 
     /**
-     * @return the caumunes
+     * @return Toutes les caumunes françaises
+     * 
+     * @see Caumune
      */
     public static List<Caumune> getCaumunes() {
-        return CAUMUNES;
+        return new ArrayList<>(CAUMUNES);
     }
+
+	public static List<Object> rechercherParCodePostal(int i) {
+		return null;
+	}
+
+	public static List<Object> rechercherParNom(String string) {
+		return null;
+	}
+
+
 }
