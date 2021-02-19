@@ -1,17 +1,26 @@
 package fr.france.outils;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
+import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import fr.france.Departement;
 import fr.france.Region;
 
 public final class OutilsDepartement {
+
     private OutilsDepartement() {
         throw new IllegalStateException("Class utilitaire");
     }
 
-    private static final RepertoireGenerique<Departement> REPERTOIRE_DEPARTEMENT = new RepertoireGenerique<>(Departement.class);
+    private static final Stream<Departement> STREAM = Arrays.asList(Departement.values()).stream();
+    private static final Map<Integer, Departement> REPERTOIRE_CODE = OutilsRepertoireGenerique
+            .genererMap(STREAM.map(Departement::getCode).collect(Collectors.toList()), Departement.class);
+    private static final RepertoireGenerique<Departement> REPERTOIRE_DEPARTEMENT = new RepertoireGenerique<>(
+            Departement.class);
 
     public static Departement[] filtrerDepartementsParRegion(Region region) {
         Collection<Departement> result = new ArrayList<>();
@@ -25,8 +34,7 @@ public final class OutilsDepartement {
         return REPERTOIRE_DEPARTEMENT.rechercherParNom(nom);
     }
 
-	public static Object rechercherParCode(int input) {
-		return null;
-	}
-
+    public static Departement rechercherParCode(int code) {
+        return REPERTOIRE_CODE.get(code);
+    }
 }
