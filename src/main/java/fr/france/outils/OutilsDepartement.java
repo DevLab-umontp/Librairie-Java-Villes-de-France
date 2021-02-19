@@ -9,6 +9,7 @@ import java.util.stream.Stream;
 
 import fr.france.Departement;
 import fr.france.Region;
+import fr.france.StatutDepartement;
 
 public final class OutilsDepartement {
 
@@ -26,6 +27,14 @@ public final class OutilsDepartement {
         Collection<Departement> result = new ArrayList<>();
         for (Departement dep : Departement.values())
             if (dep.getRegion().equals(region))
+                result.add(dep);
+        return result.toArray(new Departement[0]);
+    }
+
+    public static Departement[] filtrerDepartementsParStatut(StatutDepartement statut) {
+        Collection<Departement> result = new ArrayList<>();
+        for (Departement dep : Departement.values())
+            if (dep.getStatut().equals(statut))
                 result.add(dep);
         return result.toArray(new Departement[0]);
     }

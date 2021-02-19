@@ -389,7 +389,8 @@ public enum Departement {
     /**
      * Département de Territoire-de-Belfort
      */
-    TERRITOIRE_DE_BELFORT(90, StatutDepartement.DPT, "Territoire-de-Belfort", "Belfort", Region.BOURGOGNE_FRANCHE_COMTE), //
+    TERRITOIRE_DE_BELFORT(90, StatutDepartement.DPT, "Territoire-de-Belfort", "Belfort",
+            Region.BOURGOGNE_FRANCHE_COMTE), //
     /**
      * Département de Essonne
      */
@@ -447,8 +448,9 @@ public enum Departement {
     /**
      * Département de Terres australes et antarctiques françaises
      */
-    TERRES_AUSTRALES_ET_ANTARCTIQUES_FRANCAISE(984, StatutDepartement.TOM, "Terres australes et antarctiques françaises",
-            "Aucune prefecture", Region.DEPARTEMENT_NON_RATTACHE_A_UNE_REGION), //
+    TERRES_AUSTRALES_ET_ANTARCTIQUES_FRANCAISE(984, StatutDepartement.TOM,
+            "Terres australes et antarctiques françaises", "Aucune prefecture",
+            Region.DEPARTEMENT_NON_RATTACHE_A_UNE_REGION), //
     /**
      * Département de Wallis-et-Futuna
      */
@@ -506,6 +508,48 @@ public enum Departement {
     }
 
     /**
+     * Retourne le {@link Departement} correspondant au code donné en paramètre.
+     * 
+     * @param code du département devant être cherché
+     * 
+     * @return {@code Departement} correpondant au code donné, retourne {@code null}
+     *         si aucun département avec ce code a été trouvé.
+     * 
+     * @see Departement
+     */
+    public static Departement rechercherParCode(int code) {
+        return OutilsDepartement.rechercherParCode(code);
+    }
+
+    /**
+     * Retourne les {@link Departement} correspondant au statut de département donné
+     * en paramètre.
+     * 
+     * @param statut des départements devant être cherchés
+     * 
+     * @return Un tableau de {@code Departement} correpondants au statut donné
+     * 
+     * @see StatutDepartement
+     */
+    public static Departement[] getDepartementsParStatut(StatutDepartement statut) {
+        return OutilsDepartement.filtrerDepartementsParStatut(statut);
+    }
+
+    /**
+     * Retourne les {@link Departement} correspondant à la région donnée en
+     * paramètre.
+     * 
+     * @param Region en commun des départements devant être cherchés
+     * 
+     * @return Un tableau de {@code Departement} correpondants à la région donnée
+     * 
+     * @see Region
+     */
+    public static Departement[] getDepartementsParRegion(Region region) {
+        return OutilsDepartement.filtrerDepartementsParRegion(region);
+    }
+
+    /**
      * @return le code du département
      */
     public int getCode() {
@@ -517,7 +561,7 @@ public enum Departement {
      * 
      * @see StatutDepartement
      */
-    public StatutDepartement getType() {
+    public StatutDepartement getStatut() {
         return statut;
     }
 
