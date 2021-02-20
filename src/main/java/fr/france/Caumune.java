@@ -53,7 +53,10 @@ public class Caumune {
 
     public Object getDepartement() {
         int code = codePostal / 1000;
-        return Departement.rechercherParCode(code);
+        if (code != 20)
+            return Departement.rechercherParCode(code);
+        else
+            return Departement.rechercherParCode(codeINSEE.substring(0, 2));
     }
 
     /*
