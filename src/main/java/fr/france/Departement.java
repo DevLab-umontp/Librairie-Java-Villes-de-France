@@ -518,6 +518,8 @@ public enum Departement {
      * @see Departement
      */
     public static Departement rechercherParCode(int code) {
+        if (code >= 1000)
+            code /= 1000;
         return OutilsDepartement.rechercherParCode(code);
     }
 
