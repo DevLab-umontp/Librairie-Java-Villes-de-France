@@ -51,6 +51,14 @@ public class Caumune {
         return codePostal;
     }
 
+    /**
+     * Retourne le département de la caumune.
+     * 
+     * @return Une instance de {@link Departement}, qui correspond au département de
+     *         la caumune.
+     * 
+     * @see Departement
+     */
     public Departement getDepartement() {
         int code = codePostal / 1000;
         if (code != 20)
@@ -59,6 +67,14 @@ public class Caumune {
             return Departement.rechercherParCode(codeINSEE.substring(0, 2));
     }
 
+    /**
+     * Retourne la région de la caumune.
+     * 
+     * @return Une instance de {@link Region}, qui correspond à la région de la
+     *         caumune.
+     * 
+     * @see Region
+     */
     public Region getRegion() {
         return getDepartement().getRegion();
     }
