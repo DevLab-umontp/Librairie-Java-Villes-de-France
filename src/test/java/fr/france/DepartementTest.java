@@ -42,4 +42,9 @@ class DepartementTest {
     void test_rechercheCorseDuSud() {
         assertEquals(Departement.CORSE_DU_SUD, Departement.rechercherParCode("2A"));
     }
+
+    @Test
+    void test_rechercheHauteCorse() {
+        assertEquals(Departement.HAUTE_CORSE, Departement.rechercherParCode("2B"));
+    }
 }

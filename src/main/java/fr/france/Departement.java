@@ -522,6 +522,29 @@ public enum Departement {
     }
 
     /**
+     * Retourne le {@link Departement} correspondant au code donné en paramètre.
+     * 
+     * @param code du département devant être cherché
+     * 
+     * @return {@code Departement} correpondant au code donné, retourne {@code null}
+     *         si aucun département avec ce code a été trouvé.
+     * 
+     * @see Departement
+     */
+    public static Departement rechercherParCode(String code) {
+        try {
+            int codeCherche = Integer.parseInt(code);
+            return OutilsDepartement.rechercherParCode(codeCherche);
+        } catch (NumberFormatException e) {
+            if (code.endsWith("A"))
+                return Departement.CORSE_DU_SUD;
+            if (code.endsWith("B"))
+                return Departement.HAUTE_CORSE;
+            return null;
+        }
+    }
+
+    /**
      * Retourne les {@link Departement} correspondant au statut de département donné
      * en paramètre.
      * 
