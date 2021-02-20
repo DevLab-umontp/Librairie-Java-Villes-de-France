@@ -105,4 +105,8 @@ public class Caumune {
         return true;
     }
 
+	public Object getRegion() {
+		return null;
+	}
+
 }

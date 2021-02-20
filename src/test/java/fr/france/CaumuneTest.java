@@ -48,4 +48,9 @@ class CaumuneTest {
         buildCaumune("2A004,Ajaccio,20000");
         assertEquals(Departement.CORSE_DU_SUD, caumune.getDepartement());
     }
+
+    @Test
+    void test_getRegion() {
+        assertEquals(Region.OCCITANIE, caumune.getRegion());
+    }
 }
