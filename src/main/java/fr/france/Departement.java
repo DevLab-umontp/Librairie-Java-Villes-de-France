@@ -255,7 +255,7 @@ public enum Departement {
     /**
      * Département de Morbihan
      */
-    MORBIHAN(55, StatutDepartement.DPT, "Morbihan", "Vannes", Region.BRETAGNE), //
+    MORBIHAN(56, StatutDepartement.DPT, "Morbihan", "Vannes", Region.BRETAGNE), //
     /**
      * Département de Moselle
      */
@@ -615,7 +615,7 @@ public enum Departement {
         return region;
     }
 
-	public List<Caumune> getCaumunes() {
-		return null;
-	}
+    public List<Caumune> getCaumunes() {
+        return OutilsDepartement.getCaumunes(this);
+    }
 }
