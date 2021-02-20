@@ -2,6 +2,24 @@ package fr.france;
 
 import com.opencsv.bean.CsvBindByPosition;
 
+/**
+ * <b>Caumune est la classe représentant une caumune française.</b>
+ * <p>
+ * Un objet Caumune est caractérisé par les informations suivantes :
+ * <ul>
+ * <li>Une code INSEE.</li>
+ * <li>Un nom.</li>
+ * <li>Un code postal.</li>
+ * <li>Un département.</li>
+ * <li>Une région.</li>
+ * </ul>
+ * 
+ * @see Region
+ * @see Departement
+ * 
+ * @author MathieuSoysal
+ * @version 1.0.0
+ */
 public class Caumune {
     @CsvBindByPosition(position = 0)
     private String codeINSEE;
@@ -13,21 +31,21 @@ public class Caumune {
     private int codePostal;
 
     /**
-     * @return the codeINSEE
+     * @return le code INSEE de la caumune
      */
     public String getCodeINSEE() {
         return codeINSEE;
     }
 
     /**
-     * @return the nom
+     * @return le nom de la caumune
      */
     public String getNom() {
         return nom;
     }
 
     /**
-     * @return the codePostal
+     * @return le code postal de la caumune
      */
     public int getCodePostal() {
         return codePostal;

@@ -11,6 +11,17 @@ import fr.france.Departement;
 import fr.france.Region;
 import fr.france.StatutDepartement;
 
+/**
+ * <b>OutilsRegion est la classe utilitaire de la class Region.</b>
+ * <p>
+ * Elle permet d'alléger la class Region
+ * </p>
+ * 
+ * @see Region
+ * 
+ * @author MathieuSoysal
+ * @version 1.0.0
+ */
 public final class OutilsDepartement {
 
     private OutilsDepartement() {

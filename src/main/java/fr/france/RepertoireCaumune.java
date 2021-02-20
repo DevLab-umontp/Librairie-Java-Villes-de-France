@@ -12,6 +12,22 @@ import com.opencsv.bean.CsvToBeanBuilder;
 
 import fr.france.outils.OutilsString;
 
+/**
+ * <b>RepertoireCaumune est la classe repertoriant toutes les caumunes de France.</b>
+ * <p>
+ * Cette classe permet de faire des recherches  :
+ * </p>
+ * <ul>
+ * <li>Par nom.</li>
+ * <li>Par code postal.</li>
+ * <li>Par nom et code postal.</li>
+ * </ul>
+ * 
+ * @see Caumune
+ * 
+ * @author MathieuSoysal
+ * @version 1.0.0
+ */
 public class RepertoireCaumune {
 
     private RepertoireCaumune() {
@@ -64,14 +80,44 @@ public class RepertoireCaumune {
         return new ArrayList<>(CAUMUNES);
     }
 
+    /**
+     * Retourne les {@link Caumune} correspondantes au code postal donné en
+     * paramètre.
+     * 
+     * @param codePostal des caumunes devant être cherchées
+     * 
+     * @return Une liste des {@link Caumune} correpondants au code postal donné
+     * 
+     * @see Caumune
+     */
     public static List<Caumune> rechercherParCodePostal(int codePostal) {
         return REPERTOIRE_CODE_POSTAL.get(codePostal);
     }
 
+    /**
+     * Retourne les {@link Caumune} correspondantes au nom donné en paramètre.
+     * 
+     * @param nom des caumunes devant être cherchées
+     * 
+     * @return Une liste des {@link Caumune} correpondants au nom donné
+     * 
+     * @see Caumune
+     */
     public static List<Caumune> rechercherParNom(String nom) {
         return REPERTOIRE_NOM.get(OutilsString.formater(nom));
     }
 
+    /**
+     * Retourne la {@link Caumune} correspondante au nom et au code postal donné en
+     * paramètre.
+     * 
+     * @param nom de la caumune devant être cherchée
+     * @param codePostal de la caumune devant être cherchée
+     * 
+     * @return la {@link Caumune} correpondants au nom et au code postal
+     * 
+     * @see Caumune
+     */
     public static Caumune rechercherParNomEtCodePostal(String nom, int codePostal) {
         return REPERTOIRE_NOM_ET_CODE_POSTAL.get(OutilsString.formater(nom) + codePostal);
     }
