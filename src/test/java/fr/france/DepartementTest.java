@@ -33,6 +33,8 @@ class DepartementTest {
     private static Stream<Arguments> genererArgumentsPourtest_rechercheParCode() {
         return Stream.of(//
                 Arguments.of(Departement.COTE_D_OR, 21), //
+                Arguments.of(Departement.HERAULT, 34), //
+                Arguments.of(Departement.HERAULT, 34000), //
                 Arguments.of(null, -1), //
                 Arguments.of(null, 294385), //
                 Arguments.of(Departement.GUYANE, 973));
