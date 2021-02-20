@@ -1,5 +1,7 @@
 package fr.france;
 
+import java.util.List;
+
 import fr.france.outils.OutilsDepartement;
 
 /**
@@ -612,4 +614,8 @@ public enum Departement {
     public Region getRegion() {
         return region;
     }
+
+	public List<Caumune> getCaumunes() {
+		return null;
+	}
 }

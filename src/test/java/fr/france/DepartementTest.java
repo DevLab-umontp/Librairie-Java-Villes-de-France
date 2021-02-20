@@ -1,7 +1,10 @@
 package fr.france;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.containsInAnyOrder;
+import static org.hamcrest.Matchers.hasItem;
+import java.util.List;
 import java.util.stream.Stream;
 
 import org.junit.jupiter.api.Test;
@@ -48,5 +51,11 @@ class DepartementTest {
     @Test
     void test_rechercheHauteCorse() {
         assertEquals(Departement.HAUTE_CORSE, Departement.rechercherParCode("2B"));
+    }
+
+    @Test
+    void test_getCaumunes() {
+        List<Caumune> caumunesHerault = Departement.HERAULT.getCaumunes();
+        assertThat(caumunesHerault, hasItem(RepertoireCaumune.rechercherParNomEtCodePostal("Montpellier", 34000)));
     }
 }
