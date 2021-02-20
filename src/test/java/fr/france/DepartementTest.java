@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.stream.Stream;
 
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -35,5 +36,10 @@ class DepartementTest {
                 Arguments.of(null, -1), //
                 Arguments.of(null, 294385), //
                 Arguments.of(Departement.GUYANE, 973));
+    }
+
+    @Test
+    void test_rechercheCorseDuSud() {
+        assertEquals(Departement.CORSE_DU_SUD, Departement.rechercherParCode("2A"));
     }
 }
