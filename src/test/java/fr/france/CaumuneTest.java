@@ -3,13 +3,9 @@ package fr.france;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.StringReader;
-import java.io.StringWriter;
-import java.util.List;
 
-import com.opencsv.CSVWriter;
 import com.opencsv.bean.CsvToBeanBuilder;
 
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -19,7 +15,11 @@ class CaumuneTest {
 
     @BeforeEach
     void setup() {
-        StringReader sr = new StringReader("34000,Montpellier,34000");
+        buildCaumune("34000,Montpellier,34000");
+    }
+
+    private void buildCaumune(String ligneCsv) {
+        StringReader sr = new StringReader(ligneCsv);
         caumune = new CsvToBeanBuilder<Caumune>(sr).withType(Caumune.class).build().parse().get(0);
     }
 
@@ -41,5 +41,11 @@ class CaumuneTest {
     @Test
     void test_getDepartement() {
         assertEquals(Departement.HERAULT, caumune.getDepartement());
+    }
+
+    @Test
+    void test_getDepartementCorseDuSud() {
+        buildCaumune("2A004,Ajaccio,20000");
+        assertEquals(Departement.CORSE_DU_SUD, caumune.getDepartement());
     }
 }
