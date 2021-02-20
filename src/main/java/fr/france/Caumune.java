@@ -51,12 +51,16 @@ public class Caumune {
         return codePostal;
     }
 
-    public Object getDepartement() {
+    public Departement getDepartement() {
         int code = codePostal / 1000;
         if (code != 20)
             return Departement.rechercherParCode(code);
         else
             return Departement.rechercherParCode(codeINSEE.substring(0, 2));
+    }
+
+    public Region getRegion() {
+        return getDepartement().getRegion();
     }
 
     /*
@@ -104,9 +108,5 @@ public class Caumune {
             return false;
         return true;
     }
-
-	public Object getRegion() {
-		return null;
-	}
 
 }
