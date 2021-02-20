@@ -10,13 +10,14 @@ import com.opencsv.CSVWriter;
 import com.opencsv.bean.CsvToBeanBuilder;
 
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class CaumuneTest {
 
     private Caumune caumune;
 
-    @BeforeAll
+    @BeforeEach
     void setup() {
         StringReader sr = new StringReader("34000,Montpellier,34000");
         caumune = new CsvToBeanBuilder<Caumune>(sr).withType(Caumune.class).build().parse().get(0);
