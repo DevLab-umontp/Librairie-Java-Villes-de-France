@@ -51,6 +51,11 @@ public class Caumune {
         return codePostal;
     }
 
+    public Object getDepartement() {
+        int code = codePostal / 1000;
+        return Departement.rechercherParCode(code);
+    }
+
     /*
      * (non-Javadoc)
      * 
@@ -96,10 +101,5 @@ public class Caumune {
             return false;
         return true;
     }
-
-	public Object getDepartement() {
-		return null;
-	}
-
 
 }
