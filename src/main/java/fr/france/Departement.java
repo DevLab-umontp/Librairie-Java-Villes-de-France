@@ -534,7 +534,7 @@ public enum Departement {
     public static Departement rechercherParCode(String code) {
         try {
             int codeCherche = Integer.parseInt(code);
-            return OutilsDepartement.rechercherParCode(codeCherche);
+            return rechercherParCode(codeCherche);
         } catch (NumberFormatException e) {
             if (code.endsWith("A"))
                 return Departement.CORSE_DU_SUD;
