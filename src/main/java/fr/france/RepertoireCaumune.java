@@ -5,10 +5,8 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 import com.opencsv.bean.CsvToBeanBuilder;
 
@@ -20,12 +18,12 @@ public class RepertoireCaumune {
         throw new IllegalStateException("Class utilitaire");
     }
 
-    private static final Set<Caumune> CAUMUNES = new HashSet<>(initCaumunes());
+    private static final List<Caumune> CAUMUNES = initCaumunes();
 
     private static List<Caumune> initCaumunes() {
         List<Caumune> result = null;
         try {
-            result = new CsvToBeanBuilder(new FileReader("laposte_hexasmal.csv")).withType(Caumune.class).build()
+            result = new CsvToBeanBuilder<Caumune>(new FileReader("caumunes.csv")).withType(Caumune.class).build()
                     .parse();
         } catch (IllegalStateException | FileNotFoundException e) {
             e.printStackTrace();
