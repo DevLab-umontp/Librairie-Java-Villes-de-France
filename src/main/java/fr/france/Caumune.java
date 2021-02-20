@@ -97,5 +97,9 @@ public class Caumune {
         return true;
     }
 
+	public Object getDepartement() {
+		return null;
+	}
+
 
 }
