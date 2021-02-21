@@ -88,13 +88,13 @@ public class OutilsString {
 	}
 
 	/**
-	 * @param nom
+	 * @param nom que l'on veut formater
 	 * 
 	 * @return la variable {@code nom} formaté de façon à supprimer les accents et
 	 *         les caractères spéciaux, ainsi uniformiser les entrées.
 	 * 
 	 * @see String#toLowerCase(Locale)
-	 * @see supprimerAccent
+	 * @see OutilsString#supprimerAccentuation(String)
 	 * 
 	 * @since 1.0.0
 	 */
