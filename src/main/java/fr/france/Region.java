@@ -1,5 +1,7 @@
 package fr.france;
 
+import org.hamcrest.Matcher;
+
 import fr.france.outils.OutilsDepartement;
 import fr.france.outils.OutilsRegion;
 
@@ -161,5 +163,9 @@ public enum Region {
     public String getNom() {
         return nom;
     }
+
+	public Matcher getCaumunes() {
+		return null;
+	}
 
 }
