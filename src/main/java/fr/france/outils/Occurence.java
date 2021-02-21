@@ -19,7 +19,10 @@ class Occurence {
     private int difference;
 
     /**
-     * @param valeur
+     * @param valeur         Chaine de caractères
+     * @param occurenceCible Chaine de caractères pour laquelle on cherche une
+     *                       occurence
+     * 
      */
     public Occurence(String valeur, String occurenceCible) {
         this.valeur = valeur;

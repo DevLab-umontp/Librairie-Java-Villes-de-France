@@ -621,6 +621,11 @@ public enum Departement {
         return region;
     }
 
+    /**
+     * @return Toutes les caumunes du département
+     * 
+     * @see Caumune
+     */
     public List<Caumune> getCaumunes() {
         return OutilsDepartement.getCaumunes(this);
     }

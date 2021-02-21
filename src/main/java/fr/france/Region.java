@@ -164,6 +164,11 @@ public enum Region {
         return nom;
     }
 
+    /**
+     * @return Toutes les caumunes de la région
+     * 
+     * @see Caumune
+     */
 	public List<Caumune> getCaumunes() {
 		return OutilsRegion.getCaumunes(this);
 	}
