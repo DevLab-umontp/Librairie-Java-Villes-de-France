@@ -1,17 +1,17 @@
-<!-- [![Maven Central](https://img.shields.io/maven-central/v/com.github.devlab-umontp/villes-et-departements-de-france.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22com.github.devlab-umontp%22%20AND%20a:%22villes-et-departements-de-france%22)
+<!-- [![Maven Central](https://img.shields.io/maven-central/v/com.github.devlab-umontp/villes-et-departements-de-france.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22com.github.devlab-umontp%22%20AND%20a:%22villes-et-departements-de-france%22) -->
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=DevLab-umontp_Librairie-Java-Villes-de-France&metric=alert_status)](https://sonarcloud.io/dashboard?id=DevLab-umontp_Librairie-Java-Villes-de-France)
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=DevLab-umontp_Librairie-Java-Villes-de-France&metric=coverage)](https://sonarcloud.io/dashboard?id=DevLab-umontp_Librairie-Java-Villes-de-France) -->
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=DevLab-umontp_Librairie-Java-Villes-de-France&metric=coverage)](https://sonarcloud.io/dashboard?id=DevLab-umontp_Librairie-Java-Villes-de-France)
 ![GitHub Actions](https://github.com/DevLab-umontp/Librairie-Java-Villes-de-France/workflows/Java%20CI%20with%20Maven/badge.svg)
 [![Javadoc](https://img.shields.io/badge/JavaDoc-Online-green)](https://mathieusoysal.github.io/stats/librairie-java-villes-de-france/fr/france/package-summary.html)
 [![Gitmoji.dev](https://img.shields.io/badge/gitmoji-%20😜%20😍-FFDD67.svg?style=flat-square)](https://gitmoji.dev) 
 
-# ![](ressources/devicon.png) Librairie Java : Villes de France [![GitHub](https://img.shields.io/github/license/DevLab-umontp/Librairie-Java-Villes-de-France)](https://github.com/DevLab-umontp/Librairie-Java-Villes-de-France/blob/master/LICENSE)
+# ![](https://github.com/DevLab-umontp/Librairie-Java-EDT/blob/main/ressources/devicon.png) Librairie Java : Villes de France [![GitHub](https://img.shields.io/github/license/DevLab-umontp/Librairie-Java-Villes-de-France)](https://github.com/DevLab-umontp/Librairie-Java-Villes-de-France/blob/master/LICENSE)
 
 ### IUT Montpellier-Sète – Département Informatique
 * **Colaborateurs:** [étudiants du département informatique](https://iut-montpellier-sete.edu.umontpellier.fr/dut-informatique/)
 
 ### Les projets utilisant la librairie 
- - [Bot Discord EDT](https://github.com/DevLab-umontp/BOT-DISCORD-EDT) : Bot Discord facilitant l'accès à l'empoi du temps de l'IUT de Montpellier
+ - []() : 
 
 ## Comment intégrer la Librairie Java Villes de France dans votre code
 
@@ -78,4 +78,4 @@ Les suggestions et contributions sont toujours les bienvenues! Veuillez discuter
 
 ## Licence
 
-Ce projet est publié sous la licence [Academic Free License 3.0](https://github.com/DevLab-umontp/Librarie-Java-Villes-de-France/blob/main/LICENSE)
+Ce projet est publié sous la licence [Mozilla Public License 2.0](https://github.com/DevLab-umontp/Librarie-Java-Villes-de-France/blob/main/LICENSE)
