@@ -1,9 +1,12 @@
 package fr.france;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.hamcrest.Matchers.hasItem;
+import static org.junit.jupiter.api.Assertions.assertAll;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -57,5 +60,12 @@ class DepartementTest {
     void test_getCaumunes() {
         List<Caumune> caumunesHerault = Departement.HERAULT.getCaumunes();
         assertThat(caumunesHerault, hasItem(RepertoireCaumune.rechercherParNomEtCodePostal("Montpellier", 34000)));
+    }
+
+    @Test
+    void test_getCaumunes_aucunNull() {
+        for (Departement departement : Departement.values()) {
+            assertNotNull(departement.getCaumunes());
+        }
     }
 }
