@@ -29,5 +29,5 @@ public enum StatutDepartement {
     /**
      * Territoires d'outre-mer
      */
-    TOM
+    TOM, MONACO
 }

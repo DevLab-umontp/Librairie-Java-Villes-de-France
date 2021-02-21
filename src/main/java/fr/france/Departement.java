@@ -448,6 +448,10 @@ public enum Departement {
      */
     SAINT_MARTIN(978, StatutDepartement.COM, "Saint-Martin", "Marigot", Region.DEPARTEMENT_NON_RATTACHE_A_UNE_REGION), //
     /**
+     * Département de Monaco
+     */
+    MONACO(98, StatutDepartement.MONACO, "Monaco", "Monaco", Region.DEPARTEMENT_NON_RATTACHE_A_UNE_REGION), //
+    /**
      * Département de Terres australes et antarctiques françaises
      */
     TERRES_AUSTRALES_ET_ANTARCTIQUES_FRANCAISE(984, StatutDepartement.TOM,
@@ -520,7 +524,9 @@ public enum Departement {
      * @see Departement
      */
     public static Departement rechercherParCode(int code) {
-        if (code >= 1000)
+        if (code >= 97000 && code != 98000)
+            code /= 100;
+        else if (code >= 1000)
             code /= 1000;
         return OutilsDepartement.rechercherParCode(code);
     }

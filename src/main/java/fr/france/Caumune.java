@@ -60,9 +60,8 @@ public class Caumune {
      * @see Departement
      */
     public Departement getDepartement() {
-        int code = codePostal / 1000;
-        if (code != 20)
-            return Departement.rechercherParCode(code);
+        if (codePostal / 1000 != 20)
+            return Departement.rechercherParCode(codePostal);
         else
             return Departement.rechercherParCode(codeINSEE.substring(0, 2));
     }
