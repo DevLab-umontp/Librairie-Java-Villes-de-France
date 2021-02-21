@@ -50,7 +50,7 @@ class ExempleDeCode {
         Departement herault = Departement.HERAULT;
 
         // Récupérer les Communes de l'Hérault
-        List<Commune> CommunesHerault = herault.getCommunes();
+        List<Commune> communesHerault = herault.getCommunes();
 
         // Récupérer la région de l'Hérault
         Region occitanie = herault.getRegion();
@@ -61,13 +61,13 @@ class ExempleDeCode {
         // Rechercher un département par rapport à son code
         Departement vaucluse = Departement.rechercherParCode(84);
 
-        // Récupérer des départements par rapport à leur statut 
+        // Récupérer les départements possédant le statut Département d'Outre-Mer
         List<Departement> departementsDom = Departement.filtrerParStatut(StatutDepartement.DOM);
 
-        // Rechercher les Communes par rapport à leur code postal
-        List<Commune> Communes = RepertoireCommune.rechercherParCodePostal(56250);
+        // Rechercher les Communes possédant le code postal 56250
+        List<Commune> communes = RepertoireCommune.rechercherParCodePostal(56250);
 
-        // Rechercher une Commune par rapport à son nom et son code postal
+        // Rechercher la Commune qui se nomme Trefflean et qui possède le code postal 56250
         Commune trefflean = RepertoireCommune.rechercherParNomEtCodePostal("Trefflean",56250);
     }
 }
