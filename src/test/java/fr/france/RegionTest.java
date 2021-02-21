@@ -45,11 +45,6 @@ class RegionTest {
     }
 
     @Test
-    void test_rechercheParDepartement() {
-        assertEquals(Region.PROVENCE_ALPES_COTE_D_AZUR, Region.rechercherParDepartement(Departement.VAUCLUSE));
-    }
-
-    @Test
     void test_getCaumunes() {
         List<Caumune> excepted = new ArrayList<>();
         excepted.addAll(Departement.ALPES_DE_HAUTES_PROVENCE.getCaumunes());

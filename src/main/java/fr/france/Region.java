@@ -128,25 +128,6 @@ public enum Region {
     }
 
     /**
-     * Retourne la {@link Region} contenant le {@link Departement} donné en
-     * paramètre.
-     * 
-     * @param departement contenu dans la région devant être cherché
-     * 
-     * @return {@link Region} correpondant au département donné, sinon retourne
-     *         {@code null} si aucune région avec ce département a été trouvé.
-     * 
-     * @see Region
-     */
-    public static Region rechercherParDepartement(Departement departement) {
-        for (Region region : Region.values())
-            for (Departement depDansRegion : region.getDepartements())
-                if (departement == depDansRegion)
-                    return region;
-        return null;
-    }
-
-    /**
      * @return les départements contenus au sein de la région
      * 
      * @see Departement
