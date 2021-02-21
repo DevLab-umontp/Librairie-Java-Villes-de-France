@@ -61,7 +61,7 @@ public final class OutilsDepartement {
     }
 
     public static List<Caumune> getCaumunes(Departement departement){
-        return REPERTOIRE_CAUMUNE.get(departement);
+        return REPERTOIRE_CAUMUNE.getOrDefault(departement, new ArrayList<>());
     }
 
     private static EnumMap<Departement, List<Caumune>> initialiserRepertoireCaumune() {
