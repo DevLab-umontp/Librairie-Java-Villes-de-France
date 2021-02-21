@@ -58,7 +58,7 @@ class RegionTest {
         excepted.addAll(Departement.BOUCHES_DU_RHONE.getCaumunes());
         excepted.addAll(Departement.VAR.getCaumunes());
         excepted.addAll(Departement.VAUCLUSE.getCaumunes());
-        assertThat(excepted,  containsInAnyOrder(Region.PROVENCE_ALPES_COTE_D_AZUR.getCaumunes()));
+        assertThat(excepted,  containsInAnyOrder(Region.PROVENCE_ALPES_COTE_D_AZUR.getCaumunes().toArray(new Caumune[0])));
     }
 
 }
