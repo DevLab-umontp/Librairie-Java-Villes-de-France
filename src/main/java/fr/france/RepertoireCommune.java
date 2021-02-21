@@ -43,7 +43,7 @@ public class RepertoireCommune {
             result = new CsvToBeanBuilder<Commune>(new FileReader("communes.csv")).withType(Commune.class).build()
                     .parse();
         } catch (IllegalStateException | FileNotFoundException e) {
-            e.printStackTrace();
+            System.err.println("Le fichier contenant les communes n'a pas été trouvé");
         }
         return result;
     }
