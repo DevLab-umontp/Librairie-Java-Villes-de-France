@@ -9,7 +9,7 @@ class RepertoireGenerique<T extends Enum<T>> {
     private final Map<String, T> repertoire;
 
     /**
-     * @param repertoire
+     * @param enumType the enum
      */
     public RepertoireGenerique(Class<T> enumType) {
         Map<String, T> temp = new HashMap<>();

@@ -104,12 +104,12 @@ public enum Region {
     DEPARTEMENT_NON_RATTACHE_A_UNE_REGION("Département non rattaché à une région.");
 
     private List<Departement> departements;
-    private String nom;
+    private final String nom;
 
     /**
      * @param nom Nom de la région
      */
-    private Region(String nom) {
+    Region(String nom) {
         this.nom = nom;
     }
 

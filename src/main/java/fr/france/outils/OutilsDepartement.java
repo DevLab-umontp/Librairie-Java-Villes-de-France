@@ -2,7 +2,6 @@ package fr.france.outils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
@@ -33,7 +32,7 @@ public final class OutilsDepartement {
 
     private static final Map<Integer, Departement> REPERTOIRE_CODE = initialiserRepertoireCode();
     private static final RepertoireGenerique<Departement> REPERTOIRE_NOM = new RepertoireGenerique<>(Departement.class);
-    private static final Map<Departement, List<Commune>> REPERTOIRE_Commune = initialiserRepertoireCommune();
+    private static final Map<Departement, List<Commune>> REPERTOIRE_COMMUNE = initialiserRepertoireCommune();
 
     public static List<Departement> filtrerDepartementsParRegion(Region region) {
         List<Departement> result = new ArrayList<>();
@@ -60,22 +59,22 @@ public final class OutilsDepartement {
     }
 
     public static List<Commune> getCommunes(Departement departement){
-        return REPERTOIRE_Commune.getOrDefault(departement, new ArrayList<>());
+        return REPERTOIRE_COMMUNE.getOrDefault(departement, new ArrayList<>());
     }
 
     private static EnumMap<Departement, List<Commune>> initialiserRepertoireCommune() {
         EnumMap<Departement, List<Commune>> result = new EnumMap<>(Departement.class);
         for (Commune Commune : RepertoireCommune.getCommunes()) {
             Departement departement = Commune.getDepartement();
-            List<Commune> Communes = result.computeIfAbsent(departement, k -> new ArrayList<>());
-            Communes.add(Commune);
+            List<Commune> communes = result.computeIfAbsent(departement, k -> new ArrayList<>());
+            communes.add(Commune);
         }
         return result;
     }
 
     private static Map<Integer, Departement> initialiserRepertoireCode() {
         return OutilsRepertoireGenerique.genererMap(
-                Arrays.asList(Departement.values()).stream().map(Departement::getCode).collect(Collectors.toList()),
+                Arrays.stream(Departement.values()).map(Departement::getCode).collect(Collectors.toList()),
                 Departement.class);
     }
 }

@@ -26,24 +26,24 @@ public final class OutilsRegion {
     }
 
     private static final RepertoireGenerique<Region> REPERTOIRE_REGION = new RepertoireGenerique<>(Region.class);
-    private static final Map<Region, List<Commune>> REPERTOIRE_Commune = initialiserRepertoireCommune();
+    private static final Map<Region, List<Commune>> REPERTOIRE_COMMUNE = initialiserRepertoireCommune();
 
     public static Region rechercherParNom(String nom) {
         return REPERTOIRE_REGION.rechercherParNom(nom);
     }
 
     public static List<Commune> getCommunes(Region region) {
-        return REPERTOIRE_Commune.get(region);
+        return REPERTOIRE_COMMUNE.get(region);
     }
 
     private static Map<Region, List<Commune>> initialiserRepertoireCommune() {
         EnumMap<Region, List<Commune>> result = new EnumMap<>(Region.class);
         for (Region region : Region.values()) {
-            List<Commune> Communes = new ArrayList<>();
+            List<Commune> communes = new ArrayList<>();
             for (Departement departement : region.getDepartements()) {
-                Communes.addAll(departement.getCommunes());
+                communes.addAll(departement.getCommunes());
             }
-            result.put(region, Communes);
+            result.put(region, communes);
         }
         return result;
     }

@@ -117,11 +117,8 @@ public class Commune {
         if (codePostal != other.codePostal)
             return false;
         if (nom == null) {
-            if (other.nom != null)
-                return false;
-        } else if (!nom.equals(other.nom))
-            return false;
-        return true;
+            return other.nom == null;
+        } else return nom.equals(other.nom);
     }
 
 }

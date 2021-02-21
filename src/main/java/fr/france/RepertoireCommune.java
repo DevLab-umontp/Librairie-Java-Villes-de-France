@@ -35,7 +35,7 @@ public class RepertoireCommune {
         throw new IllegalStateException("Class utilitaire");
     }
 
-    private static final List<Commune> CommuneS = initCommunes();
+    private static final List<Commune> COMMUNES = initCommunes();
 
     private static List<Commune> initCommunes() {
         List<Commune> result = null;
@@ -56,7 +56,7 @@ public class RepertoireCommune {
         Map<Integer, List<Commune>> codePostaux = new HashMap<>();
         Map<String, List<Commune>> noms = new HashMap<>();
         Map<String, Commune> nomEtCodePostal = new HashMap<>();
-        for (Commune Commune : CommuneS) {
+        for (Commune Commune : COMMUNES) {
             if (Commune.getNom() == null)
                 continue;
             nomEtCodePostal.put(OutilsString.formater(Commune.getNom()) + Commune.getCodePostal(), Commune);
@@ -78,7 +78,7 @@ public class RepertoireCommune {
      * @see Commune
      */
     public static List<Commune> getCommunes() {
-        return new ArrayList<>(CommuneS);
+        return new ArrayList<>(COMMUNES);
     }
 
     /**

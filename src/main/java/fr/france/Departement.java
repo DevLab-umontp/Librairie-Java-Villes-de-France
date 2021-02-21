@@ -478,20 +478,20 @@ public enum Departement {
     ILE_DE_CLIPPERTON(989, StatutDepartement.COM, "Île de Clipperton", "Clipperton",
             Region.DEPARTEMENT_NON_RATTACHE_A_UNE_REGION);
 
-    private int code;
-    private StatutDepartement statut;
-    private String nom;
-    private String villeDePrefecture;
-    private Region region;
+    private final int code;
+    private final StatutDepartement statut;
+    private final String nom;
+    private final String villeDePrefecture;
+    private final Region region;
 
     /**
-     * @param code
-     * @param statut
-     * @param nom
-     * @param villeDePrefecture
-     * @param region
+     * @param code le code du département
+     * @param statut son statut
+     * @param nom son nom
+     * @param villeDePrefecture la ville de sa préfecture
+     * @param region sa région
      */
-    private Departement(int code, StatutDepartement statut, String nom, String villeDePrefecture, Region region) {
+    Departement(int code, StatutDepartement statut, String nom, String villeDePrefecture, Region region) {
         this.code = code;
         this.statut = statut;
         this.nom = nom;
