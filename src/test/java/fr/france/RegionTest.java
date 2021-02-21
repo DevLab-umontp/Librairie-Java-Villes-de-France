@@ -18,7 +18,7 @@ class RegionTest {
     @Test
     void test_getDepartements() {
         for (Region region : Region.values()) {
-            assertThat(getDepartementsFiltrePar(region), containsInAnyOrder(region.getDepartements()));
+            assertThat(getDepartementsFiltrePar(region), containsInAnyOrder(region.getDepartements().toArray(new Departement[0])));
         }
     }
 
