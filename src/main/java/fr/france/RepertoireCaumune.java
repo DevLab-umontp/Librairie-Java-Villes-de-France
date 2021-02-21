@@ -13,9 +13,10 @@ import com.opencsv.bean.CsvToBeanBuilder;
 import fr.france.outils.OutilsString;
 
 /**
- * <b>RepertoireCaumune est la classe repertoriant toutes les caumunes de France.</b>
+ * <b>RepertoireCaumune est la classe repertoriant toutes les caumunes de
+ * France.</b>
  * <p>
- * Cette classe permet de faire des recherches  :
+ * Cette classe permet de faire des recherches :
  * </p>
  * <ul>
  * <li>Par nom.</li>
@@ -111,7 +112,7 @@ public class RepertoireCaumune {
      * Retourne la {@link Caumune} correspondante au nom et au code postal donné en
      * paramètre.
      * 
-     * @param nom de la caumune devant être cherchée
+     * @param nom        de la caumune devant être cherchée
      * @param codePostal de la caumune devant être cherchée
      * 
      * @return la {@link Caumune} correpondants au nom et au code postal
