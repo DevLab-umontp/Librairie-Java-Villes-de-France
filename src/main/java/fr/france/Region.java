@@ -1,6 +1,6 @@
 package fr.france;
 
-import org.hamcrest.Matcher;
+import java.util.List;
 
 import fr.france.outils.OutilsDepartement;
 import fr.france.outils.OutilsRegion;
@@ -164,8 +164,8 @@ public enum Region {
         return nom;
     }
 
-	public Matcher getCaumunes() {
-		return null;
+	public List<Caumune> getCaumunes() {
+		return OutilsRegion.getCaumunes(this);
 	}
 
 }
