@@ -27,7 +27,7 @@ import fr.france.outils.OutilsDepartement;
  * @see Region
  * 
  * @author MathieuSoysal
- * @version 1.0.0
+ * @version 1.0.1
  */
 public enum Departement {
     AIN(1, StatutDepartement.DPT, "Ain", "Bourg-en-Bresse", Region.AUVERGNE_RHONE_ALPES), //
@@ -560,11 +560,11 @@ public enum Departement {
      * 
      * @param statut des départements devant être cherchés
      * 
-     * @return Un tableau de {@code Departement} correpondants au statut donné
+     * @return Une liste des {@code Departement} correpondants au statut donné
      * 
      * @see StatutDepartement
      */
-    public static Departement[] filtrerParStatut(StatutDepartement statut) {
+    public static List<Departement> filtrerParStatut(StatutDepartement statut) {
         return OutilsDepartement.filtrerDepartementsParStatut(statut);
     }
 

@@ -23,7 +23,7 @@ import fr.france.outils.OutilsRegion;
  * @see Departement
  * 
  * @author MathieuSoysal
- * @version 1.0.0
+ * @version 1.0.1
  */
 public enum Region {
     /**
@@ -103,7 +103,7 @@ public enum Region {
      */
     DEPARTEMENT_NON_RATTACHE_A_UNE_REGION("Département non rattaché à une région.");
 
-    private Departement[] departements;
+    private List<Departement> departements;
     private String nom;
 
     /**
@@ -151,7 +151,7 @@ public enum Region {
      * 
      * @see Departement
      */
-    public Departement[] getDepartements() {
+    public List<Departement> getDepartements() {
         if (departements == null)
             departements = OutilsDepartement.filtrerDepartementsParRegion(this);
         return departements;

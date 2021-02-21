@@ -35,20 +35,20 @@ public final class OutilsDepartement {
     private static final RepertoireGenerique<Departement> REPERTOIRE_NOM = new RepertoireGenerique<>(Departement.class);
     private static final Map<Departement, List<Caumune>> REPERTOIRE_CAUMUNE = initialiserRepertoireCaumune();
 
-    public static Departement[] filtrerDepartementsParRegion(Region region) {
-        Collection<Departement> result = new ArrayList<>();
+    public static List<Departement> filtrerDepartementsParRegion(Region region) {
+        List<Departement> result = new ArrayList<>();
         for (Departement dep : Departement.values())
             if (dep.getRegion().equals(region))
                 result.add(dep);
-        return result.toArray(new Departement[0]);
+        return result;
     }
 
-    public static Departement[] filtrerDepartementsParStatut(StatutDepartement statut) {
-        Collection<Departement> result = new ArrayList<>();
+    public static List<Departement> filtrerDepartementsParStatut(StatutDepartement statut) {
+        List<Departement> result = new ArrayList<>();
         for (Departement dep : Departement.values())
             if (dep.getStatut().equals(statut))
                 result.add(dep);
-        return result.toArray(new Departement[0]);
+        return result;
     }
 
     public static Departement rechercherParNom(String nom) {
