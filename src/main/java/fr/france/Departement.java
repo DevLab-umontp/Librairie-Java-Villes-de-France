@@ -564,22 +564,8 @@ public enum Departement {
      * 
      * @see StatutDepartement
      */
-    public static Departement[] getDepartementsParStatut(StatutDepartement statut) {
+    public static Departement[] filtrerParStatut(StatutDepartement statut) {
         return OutilsDepartement.filtrerDepartementsParStatut(statut);
-    }
-
-    /**
-     * Retourne les {@link Departement} correspondant à la région donnée en
-     * paramètre.
-     * 
-     * @param Region en commun des départements devant être cherchés
-     * 
-     * @return Un tableau de {@code Departement} correpondants à la région donnée
-     * 
-     * @see Region
-     */
-    public static Departement[] getDepartementsParRegion(Region region) {
-        return OutilsDepartement.filtrerDepartementsParRegion(region);
     }
 
     /**
