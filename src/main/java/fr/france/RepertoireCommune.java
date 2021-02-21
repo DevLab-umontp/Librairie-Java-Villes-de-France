@@ -40,7 +40,7 @@ public class RepertoireCommune {
     private static List<Commune> initCommunes() {
         List<Commune> result = null;
         try {
-            result = new CsvToBeanBuilder<Commune>(new FileReader("Communes.csv")).withType(Commune.class).build()
+            result = new CsvToBeanBuilder<Commune>(new FileReader("communes.csv")).withType(Commune.class).build()
                     .parse();
         } catch (IllegalStateException | FileNotFoundException e) {
             e.printStackTrace();
