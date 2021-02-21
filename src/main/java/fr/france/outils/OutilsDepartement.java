@@ -8,10 +8,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import fr.france.Caumune;
+import fr.france.Commune;
 import fr.france.Departement;
 import fr.france.Region;
-import fr.france.RepertoireCaumune;
+import fr.france.RepertoireCommune;
 import fr.france.StatutDepartement;
 
 /**
@@ -33,7 +33,7 @@ public final class OutilsDepartement {
 
     private static final Map<Integer, Departement> REPERTOIRE_CODE = initialiserRepertoireCode();
     private static final RepertoireGenerique<Departement> REPERTOIRE_NOM = new RepertoireGenerique<>(Departement.class);
-    private static final Map<Departement, List<Caumune>> REPERTOIRE_CAUMUNE = initialiserRepertoireCaumune();
+    private static final Map<Departement, List<Commune>> REPERTOIRE_Commune = initialiserRepertoireCommune();
 
     public static List<Departement> filtrerDepartementsParRegion(Region region) {
         List<Departement> result = new ArrayList<>();
@@ -59,16 +59,16 @@ public final class OutilsDepartement {
         return REPERTOIRE_CODE.get(code);
     }
 
-    public static List<Caumune> getCaumunes(Departement departement){
-        return REPERTOIRE_CAUMUNE.getOrDefault(departement, new ArrayList<>());
+    public static List<Commune> getCommunes(Departement departement){
+        return REPERTOIRE_Commune.getOrDefault(departement, new ArrayList<>());
     }
 
-    private static EnumMap<Departement, List<Caumune>> initialiserRepertoireCaumune() {
-        EnumMap<Departement, List<Caumune>> result = new EnumMap<>(Departement.class);
-        for (Caumune caumune : RepertoireCaumune.getCaumunes()) {
-            Departement departement = caumune.getDepartement();
-            List<Caumune> caumunes = result.computeIfAbsent(departement, k -> new ArrayList<>());
-            caumunes.add(caumune);
+    private static EnumMap<Departement, List<Commune>> initialiserRepertoireCommune() {
+        EnumMap<Departement, List<Commune>> result = new EnumMap<>(Departement.class);
+        for (Commune Commune : RepertoireCommune.getCommunes()) {
+            Departement departement = Commune.getDepartement();
+            List<Commune> Communes = result.computeIfAbsent(departement, k -> new ArrayList<>());
+            Communes.add(Commune);
         }
         return result;
     }

@@ -608,11 +608,11 @@ public enum Departement {
     }
 
     /**
-     * @return Toutes les caumunes du département
+     * @return Toutes les Communes du département
      * 
-     * @see Caumune
+     * @see Commune
      */
-    public List<Caumune> getCaumunes() {
-        return OutilsDepartement.getCaumunes(this);
+    public List<Commune> getCommunes() {
+        return OutilsDepartement.getCommunes(this);
     }
 }

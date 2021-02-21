@@ -49,8 +49,8 @@ class ExempleDeCode {
         // Récupérer le departement de l'Hérault
         Departement herault = Departement.HERAULT;
 
-        // Récupérer les caumunes de l'Hérault
-        List<Caumune> caumunesHerault = herault.getCaumunes();
+        // Récupérer les Communes de l'Hérault
+        List<Commune> CommunesHerault = herault.getCommunes();
 
         // Récupérer la région de l'Hérault
         Region occitanie = herault.getRegion();
@@ -64,11 +64,11 @@ class ExempleDeCode {
         // Récupérer des départements par rapport à leur statut 
         List<Departement> departementsDom = Departement.filtrerParStatut(StatutDepartement.DOM);
 
-        // Rechercher les Caumunes par rapport à leur code postal
-        List<Caumune> caumunes = RepertoireCaumune.rechercherParCodePostal(56250);
+        // Rechercher les Communes par rapport à leur code postal
+        List<Commune> Communes = RepertoireCommune.rechercherParCodePostal(56250);
 
-        // Rechercher une Caumune par rapport à son nom et son code postal
-        Caumune trefflean = RepertoireCaumune.rechercherParNomEtCodePostal("Trefflean",56250);
+        // Rechercher une Commune par rapport à son nom et son code postal
+        Commune trefflean = RepertoireCommune.rechercherParNomEtCodePostal("Trefflean",56250);
     }
 }
 ```

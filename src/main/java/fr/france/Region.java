@@ -146,12 +146,12 @@ public enum Region {
     }
 
     /**
-     * @return Toutes les caumunes de la région
+     * @return Toutes les Communes de la région
      * 
-     * @see Caumune
+     * @see Commune
      */
-	public List<Caumune> getCaumunes() {
-		return OutilsRegion.getCaumunes(this);
+	public List<Commune> getCommunes() {
+		return OutilsRegion.getCommunes(this);
 	}
 
 }

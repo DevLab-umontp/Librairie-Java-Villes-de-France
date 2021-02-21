@@ -3,9 +3,9 @@ package fr.france;
 import com.opencsv.bean.CsvBindByPosition;
 
 /**
- * <b>Caumune est la classe représentant une caumune française.</b>
+ * <b>Commune est la classe représentant une Commune française.</b>
  * <p>
- * Un objet Caumune est caractérisé par les informations suivantes :
+ * Un objet Commune est caractérisé par les informations suivantes :
  * <ul>
  * <li>Une code INSEE.</li>
  * <li>Un nom.</li>
@@ -20,7 +20,7 @@ import com.opencsv.bean.CsvBindByPosition;
  * @author MathieuSoysal
  * @version 1.0.0
  */
-public class Caumune {
+public class Commune {
     @CsvBindByPosition(position = 0)
     private String codeINSEE;
 
@@ -31,31 +31,31 @@ public class Caumune {
     private int codePostal;
 
     /**
-     * @return le code INSEE de la caumune
+     * @return le code INSEE de la Commune
      */
     public String getCodeINSEE() {
         return codeINSEE;
     }
 
     /**
-     * @return le nom de la caumune
+     * @return le nom de la Commune
      */
     public String getNom() {
         return nom;
     }
 
     /**
-     * @return le code postal de la caumune
+     * @return le code postal de la Commune
      */
     public int getCodePostal() {
         return codePostal;
     }
 
     /**
-     * Retourne le département de la caumune.
+     * Retourne le département de la Commune.
      * 
      * @return Une instance de {@link Departement}, qui correspond au département de
-     *         la caumune.
+     *         la Commune.
      * 
      * @see Departement
      */
@@ -67,10 +67,10 @@ public class Caumune {
     }
 
     /**
-     * Retourne la région de la caumune.
+     * Retourne la région de la Commune.
      * 
      * @return Une instance de {@link Region}, qui correspond à la région de la
-     *         caumune.
+     *         Commune.
      * 
      * @see Region
      */
@@ -108,7 +108,7 @@ public class Caumune {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        Caumune other = (Caumune) obj;
+        Commune other = (Commune) obj;
         if (codeINSEE == null) {
             if (other.codeINSEE != null)
                 return false;

@@ -5,7 +5,7 @@ import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
 
-import fr.france.Caumune;
+import fr.france.Commune;
 import fr.france.Departement;
 import fr.france.Region;
 
@@ -26,24 +26,24 @@ public final class OutilsRegion {
     }
 
     private static final RepertoireGenerique<Region> REPERTOIRE_REGION = new RepertoireGenerique<>(Region.class);
-    private static final Map<Region, List<Caumune>> REPERTOIRE_CAUMUNE = initialiserRepertoireCaumune();
+    private static final Map<Region, List<Commune>> REPERTOIRE_Commune = initialiserRepertoireCommune();
 
     public static Region rechercherParNom(String nom) {
         return REPERTOIRE_REGION.rechercherParNom(nom);
     }
 
-    public static List<Caumune> getCaumunes(Region region) {
-        return REPERTOIRE_CAUMUNE.get(region);
+    public static List<Commune> getCommunes(Region region) {
+        return REPERTOIRE_Commune.get(region);
     }
 
-    private static Map<Region, List<Caumune>> initialiserRepertoireCaumune() {
-        EnumMap<Region, List<Caumune>> result = new EnumMap<>(Region.class);
+    private static Map<Region, List<Commune>> initialiserRepertoireCommune() {
+        EnumMap<Region, List<Commune>> result = new EnumMap<>(Region.class);
         for (Region region : Region.values()) {
-            List<Caumune> caumunes = new ArrayList<>();
+            List<Commune> Communes = new ArrayList<>();
             for (Departement departement : region.getDepartements()) {
-                caumunes.addAll(departement.getCaumunes());
+                Communes.addAll(departement.getCommunes());
             }
-            result.put(region, caumunes);
+            result.put(region, Communes);
         }
         return result;
     }

@@ -55,15 +55,15 @@ class DepartementTest {
     }
 
     @Test
-    void test_getCaumunes() {
-        List<Caumune> caumunesHerault = Departement.HERAULT.getCaumunes();
-        assertThat(caumunesHerault, hasItem(RepertoireCaumune.rechercherParNomEtCodePostal("Montpellier", 34000)));
+    void test_getCommunes() {
+        List<Commune> CommunesHerault = Departement.HERAULT.getCommunes();
+        assertThat(CommunesHerault, hasItem(RepertoireCommune.rechercherParNomEtCodePostal("Montpellier", 34000)));
     }
 
     @Test
-    void test_getCaumunes_aucunNull() {
+    void test_getCommunes_aucunNull() {
         for (Departement departement : Departement.values()) {
-            assertNotNull(departement.getCaumunes());
+            assertNotNull(departement.getCommunes());
         }
     }
 }

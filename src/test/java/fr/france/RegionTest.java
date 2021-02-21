@@ -45,15 +45,15 @@ class RegionTest {
     }
 
     @Test
-    void test_getCaumunes() {
-        List<Caumune> excepted = new ArrayList<>();
-        excepted.addAll(Departement.ALPES_DE_HAUTES_PROVENCE.getCaumunes());
-        excepted.addAll(Departement.HAUTES_ALPES.getCaumunes());
-        excepted.addAll(Departement.ALPES_MARITIMES.getCaumunes());
-        excepted.addAll(Departement.BOUCHES_DU_RHONE.getCaumunes());
-        excepted.addAll(Departement.VAR.getCaumunes());
-        excepted.addAll(Departement.VAUCLUSE.getCaumunes());
-        assertThat(excepted,  containsInAnyOrder(Region.PROVENCE_ALPES_COTE_D_AZUR.getCaumunes().toArray(new Caumune[0])));
+    void test_getCommunes() {
+        List<Commune> excepted = new ArrayList<>();
+        excepted.addAll(Departement.ALPES_DE_HAUTES_PROVENCE.getCommunes());
+        excepted.addAll(Departement.HAUTES_ALPES.getCommunes());
+        excepted.addAll(Departement.ALPES_MARITIMES.getCommunes());
+        excepted.addAll(Departement.BOUCHES_DU_RHONE.getCommunes());
+        excepted.addAll(Departement.VAR.getCommunes());
+        excepted.addAll(Departement.VAUCLUSE.getCommunes());
+        assertThat(excepted,  containsInAnyOrder(Region.PROVENCE_ALPES_COTE_D_AZUR.getCommunes().toArray(new Commune[0])));
     }
 
 }
