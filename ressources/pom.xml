@@ -19,7 +19,7 @@
     <dependencies>
         <dependency>
             <groupId>com.github.devlab-umontp</groupId>
-            <artifactId>villes-et-departements-de-France</artifactId>
+            <artifactId>villes-et-departements-de-france</artifactId>
             <version>1.0.0</version>
         </dependency>
         <dependency>

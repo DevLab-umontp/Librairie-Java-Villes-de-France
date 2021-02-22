@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      artifact_name: edt-iut-umontp
+      artifact_name: villes-et-departements-de-france
 
     steps:
     - uses: actions/checkout@v2
