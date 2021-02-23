@@ -2,6 +2,9 @@ package fr.france;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -9,6 +12,9 @@ import java.util.List;
 import java.util.Map;
 
 import com.opencsv.bean.CsvToBeanBuilder;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 import fr.france.outils.OutilsString;
 
@@ -31,6 +37,8 @@ import fr.france.outils.OutilsString;
  */
 public class RepertoireCommune {
 
+    private static final Log log = LogFactory.getLog(RepertoireCommune.class);
+
     private RepertoireCommune() {
         throw new IllegalStateException("Class utilitaire");
     }
@@ -43,7 +51,7 @@ public class RepertoireCommune {
             result = new CsvToBeanBuilder<Commune>(new FileReader("communes.csv")).withType(Commune.class).build()
                     .parse();
         } catch (IllegalStateException | FileNotFoundException e) {
-            System.err.println("Le fichier contenant les communes n'a pas été trouvé");
+            log.error("Le fichier contenant les communes n'a pas été trouvé", e);
         }
         return result;
     }
