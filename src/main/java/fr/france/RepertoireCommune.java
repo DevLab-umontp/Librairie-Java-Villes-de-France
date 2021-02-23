@@ -1,7 +1,6 @@
 package fr.france;
 
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
@@ -68,8 +67,6 @@ public class RepertoireCommune {
         Map<String, List<Commune>> noms = new HashMap<>();
         Map<String, Commune> nomEtCodePostal = new HashMap<>();
         for (Commune Commune : COMMUNES) {
-            if (Commune.getNom() == null)
-                continue;
             nomEtCodePostal.put(OutilsString.formater(Commune.getNom()) + Commune.getCodePostal(), Commune);
             List<Commune> villesNom = noms.computeIfAbsent(OutilsString.formater(Commune.getNom()),
                     k -> new ArrayList<>());
