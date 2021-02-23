@@ -39,7 +39,7 @@ public class RepertoireCommune {
     private static final Log log = LogFactory.getLog(RepertoireCommune.class);
 
     private RepertoireCommune() {
-        throw new IllegalStateException("Class utilitaire");
+        throw new IllegalStateException("Classe utilitaire");
     }
 
     private static final List<Commune> COMMUNES = initCommunes();
