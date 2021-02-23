@@ -48,8 +48,11 @@ public class RepertoireCommune {
     private static List<Commune> initCommunes() {
         List<Commune> result = null;
         try {
-            result = new CsvToBeanBuilder<Commune>(new FileReader("communes.csv")).withType(Commune.class).build()
-                    .parse();
+            InputStream resource = RepertoireCommune.class.getClassLoader().getResourceAsStream("communes.csv");
+            if (resource == null)
+                throw new FileNotFoundException();
+            Reader reader = new InputStreamReader(resource);
+            result = new CsvToBeanBuilder<Commune>(reader).withType(Commune.class).build().parse();
         } catch (IllegalStateException | FileNotFoundException e) {
             log.error("Le fichier contenant les communes n'a pas été trouvé", e);
         }
