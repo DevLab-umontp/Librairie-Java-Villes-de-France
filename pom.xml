@@ -77,6 +77,12 @@
       <organization>com.github.devlab-umontp</organization>
       <organizationUrl>https://github.com/DevLab-umontp</organizationUrl>
     </developer>
+    <developer>
+      <name>Fabien ZOCCOLA</name>
+      <email>biothewolff@gmx.fr</email>
+      <organization>com.github.devlab-umontp</organization>
+      <organizationUrl>https://github.com/DevLab-umontp</organizationUrl>
+    </developer>
   </developers>
 
   <issueManagement>
@@ -192,6 +198,16 @@
   </profiles>
 
   <build>
+    <!-- Resources (the .CSV) -->
+    <resources>
+      <resource>
+        <directory>${project.basedir}</directory>
+        <includes>
+          <include>communes.csv</include>
+        </includes>
+      </resource>
+    </resources>
+
     <plugins>
 
       <plugin>
@@ -263,4 +279,5 @@
 
     </plugins>
   </build>
+
 </project>
