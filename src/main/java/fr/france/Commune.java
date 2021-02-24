@@ -30,6 +30,12 @@ public class Commune {
     @CsvBindByPosition(position = 2)
     private int codePostal;
 
+    @CsvBindByPosition(position = 3)
+    private double latitude;
+
+    @CsvBindByPosition(position = 4)
+    private double longitude;
+
     /**
      * @return le code INSEE de la Commune
      */
@@ -49,6 +55,24 @@ public class Commune {
      */
     public int getCodePostal() {
         return codePostal;
+    }
+
+    /**
+     * @return la latitude de la commune
+     */
+    public double getLatitude() {
+        return latitude;
+    }
+
+    /**
+     * @return la longitude de la commune
+     */
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public double[] getCoordonnees() {
+        return new double[] {latitude, longitude};
     }
 
     /**

@@ -15,7 +15,7 @@ class CommuneTest {
 
     @BeforeEach
     void setup() {
-        buildCommune("34000,Montpellier,34000");
+        buildCommune("34172,Montpellier,34000,43.6134409138,3.86851657896");
     }
 
     private void buildCommune(String ligneCsv) {
@@ -25,7 +25,7 @@ class CommuneTest {
 
     @Test
     void test_getCodeINSEE() {
-        assertEquals("34000", Commune.getCodeINSEE());
+        assertEquals("34172", Commune.getCodeINSEE());
     }
 
     @Test
@@ -36,6 +36,23 @@ class CommuneTest {
     @Test
     void test_getCodePostal() {
         assertEquals(34000, Commune.getCodePostal());
+    }
+
+    @Test
+    void test_getCoordonnees() {
+        double[] coord = new double[] {43.6134409138d, 3.86851657896d};
+        assertEquals(coord[0], Commune.getCoordonnees()[0]);
+        assertEquals(coord[1], Commune.getCoordonnees()[1]);
+    }
+
+    @Test
+    void test_getLatitude() {
+        assertEquals(43.6134409138d, Commune.getLatitude());
+    }
+
+    @Test
+    void test_getLongitude() {
+        assertEquals(3.86851657896d, Commune.getLongitude());
     }
 
     @Test
