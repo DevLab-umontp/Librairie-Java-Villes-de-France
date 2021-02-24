@@ -18,7 +18,9 @@ import com.opencsv.bean.CsvBindByPosition;
  * @see Departement
  * 
  * @author MathieuSoysal
- * @version 1.0.0
+ * @author fabien-zoccola
+ * 
+ * @version 1.1.0
  */
 public class Commune {
     @CsvBindByPosition(position = 0)
@@ -58,21 +60,14 @@ public class Commune {
     }
 
     /**
-     * @return la latitude de la commune
+     * @return la localisation de la caumune
+     * 
+     * @see Localisation
+     * 
+     * @since 1.1.0
      */
-    public double getLatitude() {
-        return latitude;
-    }
-
-    /**
-     * @return la longitude de la commune
-     */
-    public double getLongitude() {
-        return longitude;
-    }
-
-    public double[] getCoordonnees() {
-        return new double[] {latitude, longitude};
+    public Localisation getLocalisation() {
+        return new Localisation(latitude, longitude);
     }
 
     /**
@@ -142,7 +137,8 @@ public class Commune {
             return false;
         if (nom == null) {
             return other.nom == null;
-        } else return nom.equals(other.nom);
+        } else
+            return nom.equals(other.nom);
     }
 
 }

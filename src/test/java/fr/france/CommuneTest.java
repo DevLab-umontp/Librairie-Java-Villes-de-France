@@ -39,20 +39,10 @@ class CommuneTest {
     }
 
     @Test
-    void test_getCoordonnees() {
-        double[] coord = new double[] {43.6134409138d, 3.86851657896d};
-        assertEquals(coord[0], Commune.getCoordonnees()[0]);
-        assertEquals(coord[1], Commune.getCoordonnees()[1]);
-    }
-
-    @Test
-    void test_getLatitude() {
-        assertEquals(43.6134409138d, Commune.getLatitude());
-    }
-
-    @Test
-    void test_getLongitude() {
-        assertEquals(3.86851657896d, Commune.getLongitude());
+    void test_getLocalisation() {
+        Localisation localisation = new Localisation(43.6134409138d, 3.86851657896d);
+        assertEquals(localisation.getLatitude(), Commune.getLocalisation().getLatitude());
+        assertEquals(localisation.getLongitude(), Commune.getLocalisation().getLongitude());
     }
 
     @Test
