@@ -1,8 +1,6 @@
 package fr.france;
 
 import java.io.FileNotFoundException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.Reader;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -10,11 +8,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.opencsv.bean.CsvToBeanBuilder;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+import fr.france.outils.OutilsRepertoireCommune;
 import fr.france.outils.OutilsString;
 
 /**
@@ -47,13 +44,10 @@ public class RepertoireCommune {
     private static List<Commune> initCommunes() {
         List<Commune> result = null;
         try {
-            InputStream resource = RepertoireCommune.class.getClassLoader().getResourceAsStream("communes.csv");
-            if (resource == null)
-                throw new FileNotFoundException();
-            Reader reader = new InputStreamReader(resource);
-            result = new CsvToBeanBuilder<Commune>(reader).withType(Commune.class).build().parse();
+            Reader reader = OutilsRepertoireCommune.getRessource("communes.csv");
+            result = OutilsRepertoireCommune.convertirCsvEnCommune(reader);
         } catch (IllegalStateException | FileNotFoundException e) {
-            log.error("Le fichier contenant les communes n'a pas été trouvé", e);
+            log.error(e.getMessage(), e);
         }
         return result;
     }
@@ -63,21 +57,13 @@ public class RepertoireCommune {
     private static final Map<String, Commune> REPERTOIRE_NOM_ET_CODE_POSTAL;
 
     static {
-        Map<Integer, List<Commune>> codePostaux = new HashMap<>();
-        Map<String, List<Commune>> noms = new HashMap<>();
-        Map<String, Commune> nomEtCodePostal = new HashMap<>();
-        for (Commune Commune : COMMUNES) {
-            nomEtCodePostal.put(OutilsString.formater(Commune.getNom()) + Commune.getCodePostal(), Commune);
-            List<Commune> villesNom = noms.computeIfAbsent(OutilsString.formater(Commune.getNom()),
-                    k -> new ArrayList<>());
-            List<Commune> villesCodePostal = codePostaux.computeIfAbsent(Commune.getCodePostal(),
-                    k -> new ArrayList<>());
-            villesNom.add(Commune);
-            villesCodePostal.add(Commune);
-        }
-        REPERTOIRE_CODE_POSTAL = Collections.unmodifiableMap(codePostaux);
-        REPERTOIRE_NOM = Collections.unmodifiableMap(noms);
-        REPERTOIRE_NOM_ET_CODE_POSTAL = Collections.unmodifiableMap(nomEtCodePostal);
+        Map<Integer, List<Commune>> repCodePostaux = new HashMap<>();
+        Map<String, List<Commune>> repNoms = new HashMap<>();
+        Map<String, Commune> repNomEtCodePostal = new HashMap<>();
+        OutilsRepertoireCommune.initialiserRepertoires(repCodePostaux, repNoms, repNomEtCodePostal, COMMUNES);
+        REPERTOIRE_CODE_POSTAL = Collections.unmodifiableMap(repCodePostaux);
+        REPERTOIRE_NOM = Collections.unmodifiableMap(repNoms);
+        REPERTOIRE_NOM_ET_CODE_POSTAL = Collections.unmodifiableMap(repNomEtCodePostal);
     }
 
     /**
