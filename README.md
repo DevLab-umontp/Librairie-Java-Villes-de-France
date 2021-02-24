@@ -23,7 +23,7 @@ Si vous avez Maven, ajoutez ce qui suit aux dépendances de votre fichier `pom.x
 <dependency>
   <groupId>com.github.devlab-umontp</groupId>
   <artifactId>villes-et-departements-de-france</artifactId>
-  <version>1.0.1</version>
+  <version>1.1.0</version>
 </dependency>
 ```
 >*Voir un exemple de fichier [pom.xml](https://github.com/DevLab-umontp/Librarie-Java-Villes-de-France/blob/main/ressources/pom.xml#L20L24) avec la librairie Villes de France*
