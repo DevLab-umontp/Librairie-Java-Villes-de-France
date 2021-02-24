@@ -1,4 +1,4 @@
-<!-- [![Maven Central](https://img.shields.io/maven-central/v/com.github.devlab-umontp/villes-et-departements-de-france.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22com.github.devlab-umontp%22%20AND%20a:%22villes-et-departements-de-france%22) -->
+ [![Maven Central](https://img.shields.io/maven-central/v/com.github.devlab-umontp/villes-et-departements-de-france.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22com.github.devlab-umontp%22%20AND%20a:%22villes-et-departements-de-france%22)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=DevLab-umontp_Librairie-Java-Villes-de-France&metric=alert_status)](https://sonarcloud.io/dashboard?id=DevLab-umontp_Librairie-Java-Villes-de-France)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=DevLab-umontp_Librairie-Java-Villes-de-France&metric=coverage)](https://sonarcloud.io/dashboard?id=DevLab-umontp_Librairie-Java-Villes-de-France)
 ![GitHub Actions](https://github.com/DevLab-umontp/Librairie-Java-Villes-de-France/workflows/Java%20CI%20with%20Maven/badge.svg)
@@ -23,7 +23,7 @@ Si vous avez Maven, ajoutez ce qui suit aux dépendances de votre fichier `pom.x
 <dependency>
   <groupId>com.github.devlab-umontp</groupId>
   <artifactId>villes-et-departements-de-france</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
 </dependency>
 ```
 >*Voir un exemple de fichier [pom.xml](https://github.com/DevLab-umontp/Librarie-Java-Villes-de-France/blob/main/ressources/pom.xml#L20L24) avec la librairie Villes de France*
@@ -32,7 +32,7 @@ Si vous avez Maven, ajoutez ce qui suit aux dépendances de votre fichier `pom.x
 Si vous utilisez Gradle, ajoutez ce qui suit aux dépendances de votre fichier `build.gradle`:
 
 ```
-    implementation 'com.github.devlab-umontp:villes-et-departements-de-france:1.0.0'
+    implementation 'com.github.devlab-umontp:villes-et-departements-de-france:1.0.1'
 ```
 
 ## Exemple de code d'utilisation de la Librairie Java Villes de France

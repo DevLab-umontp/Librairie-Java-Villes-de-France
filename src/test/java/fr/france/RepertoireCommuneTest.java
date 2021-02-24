@@ -3,13 +3,31 @@ package fr.france;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collections;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
 class RepertoireCommuneTest {
+
+    @Test
+    void test_ConstructionJetteIllegalStateException() throws NoSuchMethodException {
+        Constructor<RepertoireCommune> constructor = RepertoireCommune.class.getDeclaredConstructor();
+        constructor.setAccessible(true);
+
+        // On vérifie qu'il jette une erreur
+        assertThrows(InvocationTargetException.class, constructor::newInstance);
+        try {
+            constructor.newInstance();
+        } catch (InvocationTargetException | InstantiationException | IllegalAccessException e) {
+            // On vérifie que la cause est bien une IllegalStateException
+            assertEquals("java.lang.IllegalStateException: Classe utilitaire", e.getCause().toString());
+        }
+    }
 
     @Test
     void test_CommunesInitialise() {
